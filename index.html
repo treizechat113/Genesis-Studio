@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="theme-color" content="#0a0a0f">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>GENESIS STUDIO — v51</title>
+<title>GENESIS STUDIO — v52</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#0a0a0f;color:#f0e6ff;font-family:'Segoe UI',sans-serif;padding-bottom:80px;-webkit-tap-highlight-color:transparent;font-size:15px}
@@ -135,7 +135,7 @@ body{background:#0a0a0f;color:#f0e6ff;font-family:'Segoe UI',sans-serif;padding-
 </div>
 <div class="header">
   <div class="header-sub">GENESIS STUDIO</div>
-  <div class="header-title">Tableau de Bord — v51</div>
+  <div class="header-title">Tableau de Bord — v52</div>
   <div class="badges">
     <span class="badge bd" id="date-badge"></span>
     <span class="badge bp" id="gaming-badge" style="display:none">🎮 Gaming du 13</span>
@@ -1163,53 +1163,7 @@ body{background:#0a0a0f;color:#f0e6ff;font-family:'Segoe UI',sans-serif;padding-
       </div>
   </div>
 
-  <!-- EN CE MOMENT -->
-  <div id="tab-maintenant" style="display:none">
-    <div class="bt-e" style="background:linear-gradient(135deg,#f72585,#7b2d8b);margin-bottom:12px">🔥 EN CE MOMENT</div>
-    <div style="font-size:13px;color:#8a7a9a;margin-bottom:12px;font-style:italic">3 projets actifs — tout le reste attend.</div>
-    <div class="sec">🎯 PROJETS ACTIFS</div>
-    <div id="projets-actifs-list" style="margin-bottom:12px"></div>
-    <div class="sec">📱 SUIVI PUBLICATIONS</div>
-    <div class="card" style="margin-bottom:8px">
-      <div class="ch ch-pk"><span>DERNIER POST PAR COMPTE</span></div>
-      <div id="suivi-publications-list"></div>
-    </div>
-    <div class="sec">📆 PROCHAINS ÉVÉNEMENTS</div>
-    <div class="card"><div class="ch ch-p"><span>30 PROCHAINS JOURS</span></div><div id="maintenant-events"></div></div>
-  </div>
 
-  <!-- CALENDRIER -->
-  <div id="tab-calendrier" style="display:none">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-      <button onclick="prevMois()" style="background:none;border:1px solid #2a1a4a;border-radius:8px;padding:6px 12px;color:#c77dff;cursor:pointer">&#8249;</button>
-      <div id="cal-titre" style="font-size:14px;font-weight:700;color:#f0e6ff"></div>
-      <button onclick="nextMois()" style="background:none;border:1px solid #2a1a4a;border-radius:8px;padding:6px 12px;color:#c77dff;cursor:pointer">&#8250;</button>
-    </div>
-    <div style="display:flex;gap:4px;margin-bottom:12px">
-      <button class="coll-tab active" onclick="switchCalVue('mois')" id="cal-vue-mois">📅 Mois</button>
-      <button class="coll-tab" onclick="switchCalVue('semaine')" id="cal-vue-semaine">📆 Semaine</button>
-      <button class="coll-tab" onclick="switchCalVue('jour')" id="cal-vue-jour">⏱️ Aujourd'hui</button>
-    </div>
-    <div id="cal-mois-content">
-      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:4px">
-        <div style="text-align:center;font-size:10px;color:#5a4a6a;font-weight:700;padding:4px 0">L</div>
-        <div style="text-align:center;font-size:10px;color:#5a4a6a;font-weight:700;padding:4px 0">M</div>
-        <div style="text-align:center;font-size:10px;color:#5a4a6a;font-weight:700;padding:4px 0">M</div>
-        <div style="text-align:center;font-size:10px;color:#5a4a6a;font-weight:700;padding:4px 0">J</div>
-        <div style="text-align:center;font-size:10px;color:#5a4a6a;font-weight:700;padding:4px 0">V</div>
-        <div style="text-align:center;font-size:10px;color:#5a4a6a;font-weight:700;padding:4px 0">S</div>
-        <div style="text-align:center;font-size:10px;color:#5a4a6a;font-weight:700;padding:4px 0">D</div>
-      </div>
-      <div id="cal-grid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:12px"></div>
-      <div class="sec">ÉVÉNEMENTS DU MOIS</div>
-      <div class="card"><div id="cal-events-list"></div></div>
-    </div>
-    <div id="cal-semaine-content" style="display:none"><div id="cal-semaine-grid"></div></div>
-    <div id="cal-jour-content" style="display:none">
-      <div style="font-size:12px;color:#8a7a9a;margin-bottom:10px" id="cal-jour-titre"></div>
-      <div id="cal-jour-grid" style="position:relative;min-height:900px"></div>
-    </div>
-  </div>
 
   <!-- GENESIS ET SES MONDES -->
 
@@ -1901,6 +1855,40 @@ body{background:#0a0a0f;color:#f0e6ff;font-family:'Segoe UI',sans-serif;padding-
   </div>
 
   <div id="tab-studio" style="display:none">
+    <!-- GOOGLE CONNEXIONS -->
+    <div class="card" style="margin-bottom:14px;border-color:#4285F430">
+      <div class="ch" style="color:#4285F4"><span>🔗 CONNEXIONS GOOGLE</span></div>
+      <div style="padding:12px 16px">
+
+        <!-- Calendrier interne -->
+        <div style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid #1e1630">
+          <div style="font-size:12px;font-weight:700;color:#f0e6ff;margin-bottom:8px">🗓️ Mes événements</div>
+          <div id="studio-mini-cal"></div>
+          <button onclick="showTab('calendrier')" style="width:100%;margin-top:8px;padding:8px;background:#0a1020;border:1px solid #4285F4;border-radius:8px;color:#4285F4;font-size:12px;font-weight:700;cursor:pointer">📅 Voir le calendrier complet</button>
+        </div>
+
+        <!-- Gmail liens directs -->
+        <div style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid #1e1630">
+          <div style="font-size:12px;font-weight:700;color:#f0e6ff;margin-bottom:8px">📧 Gmail</div>
+          <div style="display:flex;gap:6px;margin-bottom:6px">
+            <a href="https://mail.google.com/mail/#search/alternance+OR+candidature+OR+arinfo+OR+stage" target="_blank" style="flex:1;padding:8px;background:#0a1020;border:1px solid #EA4335;border-radius:8px;color:#EA4335;font-size:11px;font-weight:700;text-decoration:none;text-align:center">🎓 Alternance</a>
+            <a href="https://mail.google.com/mail/#search/interim+OR+mission+OR+emploi+OR+poste" target="_blank" style="flex:1;padding:8px;background:#0a1a10;border:1px solid #3a9a6a;border-radius:8px;color:#3a9a6a;font-size:11px;font-weight:700;text-decoration:none;text-align:center">💼 Travail</a>
+          </div>
+          <a href="https://mail.google.com" target="_blank" style="display:block;text-align:center;padding:8px;background:#0a1020;border:1px solid #EA433540;border-radius:8px;color:#8a7a9a;font-size:11px;font-weight:700;text-decoration:none">↗ Ouvrir Gmail</a>
+        </div>
+
+        <!-- Google Tasks -->
+        <div>
+          <div style="font-size:12px;font-weight:700;color:#f0e6ff;margin-bottom:8px">✅ Google Tasks</div>
+          <div style="display:flex;gap:6px">
+            <button onclick="showTab('journee-auto');showJourneeTab('config')" style="flex:1;padding:8px;background:#0a1a0a;border:1px solid #34A853;border-radius:8px;color:#34A853;font-size:11px;font-weight:700;cursor:pointer">📋 Copier tâches</button>
+            <a href="https://tasks.google.com" target="_blank" style="flex:1;padding:8px;background:#0a1a0a;border:1px solid #34A85340;border-radius:8px;color:#8a7a9a;font-size:11px;font-weight:700;text-decoration:none;text-align:center">↗ Ouvrir Tasks</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
       <div style="font-size:15px;font-weight:700;color:#c77dff">🎛️ Mes Raccourcis</div>
       <div style="font-size:16px;font-weight:700;color:#c77dff;font-family:monospace" id="studio-clock">--:--</div>
@@ -1926,7 +1914,7 @@ body{background:#0a0a0f;color:#f0e6ff;font-family:'Segoe UI',sans-serif;padding-
 
 
   <!-- MA JOURNÉE AUTO -->
-  <div id="tab-journee-auto">
+  <div id="tab-journee-auto" style="display:none">
 
     <!-- PLANNING AUTO DU JOUR -->
     <div id="planning-auto-header" style="margin-bottom:10px">
@@ -2102,6 +2090,7 @@ body{background:#0a0a0f;color:#f0e6ff;font-family:'Segoe UI',sans-serif;padding-
           <button onclick="genererJourneeAuto()" style="flex:1;padding:10px;background:#1a0a2e;border:1px solid #f72585;border-radius:10px;color:#f72585;font-size:12px;font-weight:700;cursor:pointer">↺ Régénérer</button>
           <button onclick="envoyerVersAujourdhui()" style="flex:1;padding:10px;background:#1a0a2e;border:1px solid #3a9a6a;border-radius:10px;color:#3a9a6a;font-size:12px;font-weight:700;cursor:pointer">→ Aujourd'hui</button>
           <button onclick="signalerErreurGen()" style="flex:1;padding:10px;background:#1a1000;border:1px solid #ffaa4440;border-radius:10px;color:#ffaa44;font-size:12px;font-weight:700;cursor:pointer">🚨 Erreur</button>
+          <button onclick="activerRattrapage()" id="btn-rattrapage" style="flex:1;padding:10px;background:#1a0a0a;border:1px solid #f7258540;border-radius:10px;color:#f72585;font-size:12px;font-weight:700;cursor:pointer">🔴 Rattrapage</button>
         </div>
         <!-- Formulaire erreur -->
         <div id="erreur-gen-form" style="display:none;margin-bottom:10px">
@@ -2223,7 +2212,7 @@ function showTab(tab){
   if(tab==='apprentissage'&&typeof renderRecompenses==='function'){renderRecompenses();}
   if(tab==='agence'){updateTodoProgress();showAgence('overview');}
   if(tab==='yt'){renderYoutubeHelper();}
-  if(tab==='studio'){renderShortcuts();}
+  if(tab==='studio'){renderShortcuts();renderMiniCal();}
   if(tab==='maintenant'){renderEnCeMoment();}
   if(tab==='calendrier'){renderCalendrier();}
 }
@@ -2237,8 +2226,7 @@ const MNS=['janvier','février','mars','avril','mai','juin','juillet','août','s
 // ═══════════════════════════════
 
 const SORTIES_SEMAINE=[
-  {jour:2,label:'RDV Mission Locale',heure:'13:30',duree:60,couleur:'#4a9eff'},
-  {jour:5,label:'Mission Locale zone',heure:'16:30',duree:60,couleur:'#4a9eff'},
+  // Sorties fixes supprimées — utilise Config > Mes Sorties pour ajouter tes RDV
 ];
 
 var sortiesCustom=JSON.parse(localStorage.getItem('sorties_custom')||'[]');
@@ -2441,11 +2429,11 @@ function genererJournee(){
 
   planningGenere=[...blocs,...tachesPlacees].sort((a,b)=>toMin(a.heure)-toMin(b.heure));
 
-  const result=document.getElementById('planning-result');
-  const blocks=document.getElementById('planning-blocks');
-  result.style.display='block';
-
-  blocks.innerHTML=planningGenere.map(b=>`
+  const blocksAuto2=document.getElementById('planning-blocks-auto');
+  const actions2=document.getElementById('planning-actions');
+  if(actions2)actions2.style.display='block';
+  if(!blocksAuto2)return;
+  blocksAuto2.innerHTML=planningGenere.map(b=>`
     <div style="display:flex;gap:10px;padding:10px 14px;border-bottom:1px solid #1a1428;align-items:flex-start${b.fixe?'':';background:#0d0b14'}">
       <div style="font-size:12px;font-weight:700;color:${b.couleur};min-width:44px;flex-shrink:0;margin-top:1px">${b.heure}</div>
       <div style="width:3px;border-radius:2px;background:${b.couleur};flex-shrink:0;align-self:stretch;min-height:18px"></div>
@@ -2458,14 +2446,15 @@ function genererJournee(){
   `).join('');
 
   if(tachesRestantes.length){
-    blocks.innerHTML+=`<div style="padding:12px 14px;border-top:1px solid #2a1a4a">
+    blocksAuto2.innerHTML+=`<div style="padding:12px 14px;border-top:1px solid #2a1a4a">
       <div style="font-size:10px;color:#ffaa44;font-weight:700;letter-spacing:2px;margin-bottom:6px">⚠️ NON PLACÉES (${tachesRestantes.length})</div>
       ${tachesRestantes.map(t=>`<div style="font-size:12px;color:#5a4a6a;padding:3px 0">• ${t.text}</div>`).join('')}
     </div>`;
   }
 
-  result.scrollIntoView({behavior:'smooth'});
+  if(blocksAuto2)blocksAuto2.scrollIntoView({behavior:'smooth'});
   showToast('Journée générée ✨');
+  if(typeof showJourneeTab==='function')showJourneeTab('planning');
 }
 
 function signalerErreurGen(){
@@ -2571,7 +2560,7 @@ function renderXP(){
 }
 
 function showJourneeTab(tab){
-  ['taches','planning','urgences','deplacement','blocs','config'].forEach(t=>{
+  ['taches','semaine','planning','urgences','deplacement','blocs','config'].forEach(t=>{
     const el=document.getElementById('jat-'+t+'-content');if(el)el.style.display=t===tab?'block':'none';
     const bt=document.getElementById('jat-'+t);if(bt)bt.className='coll-tab'+(t===tab?' active':'');
   });
@@ -2653,8 +2642,8 @@ function genererJourneeAuto(){
   // 4. MIO
   const mioState=getState('mio');
   const mioCas=CASCADES['mio']||[];
-  const diffTeasing=Math.round((new Date('2026-03-19')-today)/(1000*60*60*24));
-  const diffReveal=Math.round((new Date('2026-03-27')-today)/(1000*60*60*24));
+  const diffTeasing=Math.round((new Date('2026-04-09')-today)/(1000*60*60*24));
+  const diffReveal=Math.round((new Date('2026-04-17')-today)/(1000*60*60*24));
   for(let i=0;i<mioCas.length;i++){
     if(!mioState[i]){
       const urgence=diffTeasing<=1?'🔥 TEASING DEMAIN — ':'🌸 ';
@@ -2690,10 +2679,8 @@ function genererJourneeAuto(){
   if(jour===5)taches.push({text:'📸 Post Wanda Mannequinat — 18h30',tag:'POST',couleur:'#ff6b9d',priorite:2});
   if(jour===4)taches.push({text:'📅 Post agence — Jeudi',tag:'AGENCE',couleur:'#c77dff',priorite:2,conseil:'L\'agence poste le jeudi'});
 
-  // 7. OBLIGATOIRES — seulement si pas bloqué
-  TACHES_OBLIGATOIRES.forEach(t=>{
-    taches.push({text:t.text,tag:'OBLIGATOIRE',couleur:'#3a9a6a',priorite:3});
-  });
+  // 7. OBLIGATOIRES — retirées du planning auto (elles ont leur propre section)
+  // Les tâches obligatoires sont visibles dans l'onglet Tâches, pas ici.
 
   // 8. SHAI
   const shaiState=getState('shai');
@@ -2821,21 +2808,30 @@ function genererJourneeAuto(){
     raisonRattrapage = 'Tu as signalé une journée difficile.';
   }
   // Détecter si c'est déjà tard (après 19h) et rien n'est coché
-  if(heureActuelle >= 19*60 && selection.length >= 5) {
+  // Après 21h30 → rattrapage systématique
+  if(heureActuelle >= 21*60+30) {
     modeRattrapage = true;
-    raisonRattrapage = 'Il est ' + toHeure(heureActuelle) + ' — on adapte le plan à ce qu\'il reste.';
+    raisonRattrapage = 'Il est ' + toHeure(heureActuelle) + ' — mode rattrapage automatique.';
+  }
+  // Bouton manuel activé ?
+  if(localStorage.getItem('mode_rattrapage_force') === '1') {
+    modeRattrapage = true;
+    raisonRattrapage = 'Mode rattrapage activé manuellement.';
   }
 
   if(modeRattrapage) {
     // Plan de rattrapage — focus sur 1 tâche essentielle + récupération
-    var rattrTaches = selection.slice(0, 3); // Max 3 tâches
+    // Filtrer les sorties déjà passées en mode rattrapage
+    var rattrTaches = selection.filter(function(t){
+      return t.tag !== 'SORTIE'; // Les sorties sont passées, inutile de les proposer
+    }).slice(0, 3);
     var rattrHtml = '<div style="background:#1a0a0a;border:1px solid #f7258530;border-radius:12px;padding:14px;margin-bottom:10px">'
       + '<div style="font-size:12px;color:#f72585;font-weight:700;margin-bottom:4px">&#128680; MODE RATTRAPAGE</div>'
       + '<div style="font-size:12px;color:#8a7a9a;margin-bottom:10px">' + raisonRattrapage + '</div>'
       + '<div style="font-size:11px;color:#f0e6ff;font-weight:700;margin-bottom:8px">&#128161; SOLUTIONS :</div>'
       + '<div style="font-size:12px;color:#c0a8d8;line-height:2">'
       + '&#8594; <strong style="color:#f0e6ff">1 tâche seulement</strong> — choisis la plus importante ci-dessous<br>'
-      + '&#8594; Si tu as raté la routine : <strong style="color:#f0e6ff">Everything shower + bilan maintenant</strong>, même à 21h<br>'
+      + (new Date().getDay()===0 ? '&#8594; Ce soir : <strong style="color:#f0e6ff">Everything shower + bilan</strong> — c\'est dimanche<br>' : '&#8594; Si tu as raté la routine : <strong style="color:#f0e6ff">bilan + skincare maintenant</strong>, même à 21h<br>')
       + '&#8594; Japonais raté : <strong style="color:#f0e6ff">5 min de flashcards</strong> avant de dormir — ça compte<br>'
       + '&#8594; Art raté : <strong style="color:#f0e6ff">1 dessin rapide, 10 min</strong> — le streak vaut mieux que la perfection<br>'
       + '&#8594; Tâches GENESIS/Agence ratées : <strong style="color:#f0e6ff">reportées à demain</strong>, pas perdues'
@@ -3453,7 +3449,7 @@ function renderReunions(){
       titre:'🎬 Réunion bilan Phase 1 PSYCHO',
       desc:'Valider les tenues et maps avant de passer au tournage',
       quand:'Avant le 21 mars (début Phase 2)',
-      date:'2026-03-20',
+      date:'2026-04-10',
       couleur:'#f72585',
       taches:['Vérifier cohérence tenues Wanda + Bianca + Hinari','Valider les maps Zepeto sélectionnées','Confirmer le planning de tournage'],
       pourquoi:'Phase 2 commence le 21 mars — validation obligatoire avant'
@@ -3462,7 +3458,7 @@ function renderReunions(){
       titre:'🖤 Réunion direction artistique Wanda',
       desc:'Définir l\'esthétique du feed Instagram et les templates',
       quand:'Cette semaine (urgent)',
-      date:'2026-03-19',
+      date:'2026-04-09',
       couleur:'#ff6b9d',
       taches:['Choisir la palette de couleurs du feed','Créer les templates Canva Mercredi Mode / Vendredi Mannequinat','Rédiger la bio Instagram Wanda'],
       pourquoi:'Le compte doit être actif avant le 17 mars'
@@ -3471,7 +3467,7 @@ function renderReunions(){
       titre:'🏢 Réunion éditoriale agence — Avril',
       desc:'Préparer les posts agence d\'avril en avance',
       quand:'Fin mars',
-      date:'2026-03-28',
+      date:'2026-04-18',
       couleur:'#c77dff',
       taches:['Préparer Post #003 — Teaser Mio','Préparer Post #004 — Fiche Team A','Planifier la promo PSYCHO Phase 4'],
       pourquoi:'Anticiper le contenu du compte agence pour avril'
@@ -3554,8 +3550,8 @@ function renderPlanningAgence(){
   const el=document.getElementById('planning-agence-list');if(!el)return;
   const today=new Date();today.setHours(0,0,0,0);
   const posts=[
-    {date:'2026-03-19',text:'📅 Jeudi — Post #001 — Dossier Wanda',couleur:'#ff6b9d',cat:'agence-posts',idx:0},
-    {date:'2026-03-26',text:'📅 Jeudi — Post #002 — Inside GENESIS Agency',couleur:'#c77dff',cat:'agence-posts',idx:1},
+    {date:'2026-04-09',text:'📅 Jeudi — Post #001 — Dossier Wanda',couleur:'#ff6b9d',cat:'agence-posts',idx:0},
+    {date:'2026-04-16',text:'📅 Jeudi — Post #002 — Inside GENESIS Agency',couleur:'#c77dff',cat:'agence-posts',idx:1},
     {date:'2026-04-02',text:'📅 Jeudi — Post #003 — Teaser Mio (post-reveal)',couleur:'#ff6b9d',cat:'agence-posts',idx:2},
     {date:'2026-04-09',text:'📅 Jeudi — Post #004 — Fiche Team A',couleur:'#f72585',cat:'agence-posts',idx:3},
     {date:'2026-04-16',text:'📅 Jeudi — Post #005 — Reveal unité PSYCHO',couleur:'#f72585',cat:'agence-posts',idx:4},
@@ -3582,11 +3578,11 @@ function renderPlanningWanda(){
   const el=document.getElementById('planning-wanda-list');if(!el)return;
   const today=new Date();today.setHours(0,0,0,0);
   const posts=[
-    {date:'2026-03-17',text:'Post #1 — Dark Feminine concept (relance)',couleur:'#ff6b9d',cat:'wanda-posts',idx:0},
-    {date:'2026-03-18',text:'Post #2 — Coulisses fan MV PSYCHO',couleur:'#ff6b9d',cat:'wanda-posts',idx:1},
-    {date:'2026-03-19',text:'Mercredi — Mode éditorial',couleur:'#ff6b9d',recur:true},
-    {date:'2026-03-21',text:'Vendredi — Mannequinat shooting',couleur:'#ff6b9d',recur:true},
-    {date:'2026-03-24',text:'Post #5 — Collab Bianca × Wanda (teaser PSYCHO)',couleur:'#f72585',cat:'wanda-posts',idx:4},
+    {date:'2026-04-02',text:'Post #1 — Dark Feminine concept (relance)',couleur:'#ff6b9d',cat:'wanda-posts',idx:0},
+    {date:'2026-04-03',text:'Post #2 — Coulisses fan MV PSYCHO',couleur:'#ff6b9d',cat:'wanda-posts',idx:1},
+    {date:'2026-04-09',text:'Mercredi — Mode éditorial',couleur:'#ff6b9d',recur:true},
+    {date:'2026-04-11',text:'Vendredi — Mannequinat shooting',couleur:'#ff6b9d',recur:true},
+    {date:'2026-04-14',text:'Post #5 — Collab Bianca × Wanda (teaser PSYCHO)',couleur:'#f72585',cat:'wanda-posts',idx:4},
     {date:'2026-04-28',text:'Post #7 — J-7 PSYCHO compte à rebours',couleur:'#f72585',cat:'wanda-posts',idx:6},
     {date:'2026-04-30',text:'Post #8 — Jour de sortie PSYCHO 🎬',couleur:'#f72585',cat:'wanda-posts',idx:7},
   ];
@@ -3609,13 +3605,13 @@ function renderPlanningMio(){
   const el=document.getElementById('planning-mio-list');if(!el)return;
   const today=new Date();today.setHours(0,0,0,0);
   const posts=[
-    {date:'2026-03-19',text:'Teaser 1 — 1ère éclosion Tokyo 🌸',couleur:'#ff6b9d'},
-    {date:'2026-03-21',text:'Teaser 2 — Détail cosplay',couleur:'#ff6b9d'},
-    {date:'2026-03-24',text:'Teaser 3 — "Bientôt..."',couleur:'#ff6b9d'},
-    {date:'2026-03-27',text:'✨ REVEAL OFFICIEL — Pleine floraison',couleur:'#c77dff'},
-    {date:'2026-03-28',text:'Post floraison #1',couleur:'#ff6b9d'},
-    {date:'2026-03-29',text:'Post floraison #2',couleur:'#ff6b9d'},
-    {date:'2026-03-30',text:'Post floraison #3',couleur:'#ff6b9d'},
+    {date:'2026-04-09',text:'Teaser 1 — 1ère éclosion Tokyo 🌸',couleur:'#ff6b9d'},
+    {date:'2026-04-11',text:'Teaser 2 — Détail cosplay',couleur:'#ff6b9d'},
+    {date:'2026-04-14',text:'Teaser 3 — "Bientôt..."',couleur:'#ff6b9d'},
+    {date:'2026-04-17',text:'✨ REVEAL OFFICIEL — Pleine floraison',couleur:'#c77dff'},
+    {date:'2026-04-18',text:'Post floraison #1',couleur:'#ff6b9d'},
+    {date:'2026-04-26',text:'Post floraison #2',couleur:'#ff6b9d'},
+    {date:'2026-04-27',text:'Post floraison #3',couleur:'#ff6b9d'},
     {date:'2026-04-01',text:'Post floraison #4',couleur:'#ff6b9d'},
     {date:'2026-04-03',text:'Dernier post floraison + transition',couleur:'#8a7a9a'},
   ];
@@ -3772,13 +3768,13 @@ function pauseEchoes(proj){
 const IDOLS_EVENTS=[
   // ── VIE RÉELLE ──────────────────────────────
   // Anniversaires
-  {nom:'🎂 Anniversaire Papa',date:'2026-03-19',heure:'00:00',color:'#ffaa44',cat:'Famille'},
+  {nom:'🎂 Anniversaire Papa',date:'2026-04-09',heure:'00:00',color:'#ffaa44',cat:'Famille'},
   // Week-ends alternés Maman/Papa (départ vendredi ~18h)
-  {nom:'🏠 WE Maman — départ 14h30',date:'2026-03-20',heure:'18:00',color:'#ff6b9d',cat:'Famille'},
-  {nom:'🏠 WE Maman',date:'2026-03-21',heure:'00:00',color:'#ff6b9d',cat:'Famille'},
-  {nom:'🏠 WE Maman — retour',date:'2026-03-22',heure:'00:00',color:'#ff6b9d',cat:'Famille'},
-  {nom:'🏠 WE Papa',date:'2026-03-28',heure:'00:00',color:'#ffaa44',cat:'Famille'},
-  {nom:'🏠 WE Papa',date:'2026-03-29',heure:'00:00',color:'#ffaa44',cat:'Famille'},
+  {nom:'🏠 WE Maman — départ 14h30',date:'2026-04-10',heure:'18:00',color:'#ff6b9d',cat:'Famille'},
+  {nom:'🏠 WE Maman',date:'2026-04-11',heure:'00:00',color:'#ff6b9d',cat:'Famille'},
+  {nom:'🏠 WE Maman — retour',date:'2026-04-19',heure:'00:00',color:'#ff6b9d',cat:'Famille'},
+  {nom:'🏠 WE Papa',date:'2026-04-18',heure:'00:00',color:'#ffaa44',cat:'Famille'},
+  {nom:'🏠 WE Papa',date:'2026-04-26',heure:'00:00',color:'#ffaa44',cat:'Famille'},
   {nom:'🏠 WE Maman — départ 14h30',date:'2026-04-03',heure:'18:00',color:'#ff6b9d',cat:'Famille'},
   {nom:'🏠 WE Maman',date:'2026-04-04',heure:'00:00',color:'#ff6b9d',cat:'Famille'},
   {nom:'🏠 WE Maman — retour',date:'2026-04-05',heure:'00:00',color:'#ff6b9d',cat:'Famille'},
@@ -3851,7 +3847,7 @@ const IDOLS_EVENTS=[
   {nom:'🎂 Fête des Mères',date:'2026-05-31',heure:'00:00',color:'#ff6b9d',cat:'Famille'},
   {nom:'🎂 Fête des Pères',date:'2026-06-21',heure:'00:00',color:'#ffaa44',cat:'Famille'},
   // Jours fériés France
-  {nom:'🌷 Floraison des cerisiers (Sablé)',date:'2026-03-25',heure:'00:00',color:'#ff6b9d',cat:'Nature'},
+  {nom:'🌷 Floraison des cerisiers (Sablé)',date:'2026-04-15',heure:'00:00',color:'#ff6b9d',cat:'Nature'},
   {nom:'🐣 Lundi de Pâques',date:'2026-04-06',heure:'00:00',color:'#3a9a6a',cat:'Férié'},
   {nom:'🛠️ Fête du Travail',date:'2026-05-01',heure:'00:00',color:'#ffaa44',cat:'Férié'},
   {nom:'🎖️ Victoire 1945',date:'2026-05-08',heure:'00:00',color:'#4a9eff',cat:'Férié'},
@@ -3863,7 +3859,7 @@ const IDOLS_EVENTS=[
   {nom:'🕊️ Armistice',date:'2026-11-11',heure:'00:00',color:'#4a9eff',cat:'Férié'},
   {nom:'🎄 Noël',date:'2026-12-25',heure:'00:00',color:'#3a9a6a',cat:'Férié'},
   // Périodes d'examen (bac, BTS, LP) — dates approx 2026
-  {nom:'📝 Bac — épreuves de spécialité',date:'2026-03-17',heure:'08:00',color:'#f72585',cat:'Exam'},
+  {nom:'📝 Bac — épreuves de spécialité',date:'2026-04-02',heure:'08:00',color:'#f72585',cat:'Exam'},
   {nom:'📝 Bac — début épreuves finales',date:'2026-06-11',heure:'08:00',color:'#f72585',cat:'Exam'},
   {nom:'📝 BTS — épreuves écrites',date:'2026-05-11',heure:'08:00',color:'#f72585',cat:'Exam'},
   {nom:'📝 BTS — résultats',date:'2026-07-03',heure:'00:00',color:'#f72585',cat:'Exam'},
@@ -3871,14 +3867,12 @@ const IDOLS_EVENTS=[
   {nom:'🎓 Rentrée Arinfo — alternance',date:'2026-10-01',heure:'09:00',color:'#ffaa44',cat:'Formation'},
   {nom:'📋 Dossier alternance — deadline',date:'2026-09-01',heure:'00:00',color:'#f72585',cat:'Formation'},
   // Mission Locale
-  {nom:'📋 RDV Mission Locale',date:'2026-03-18',heure:'13:30',color:'#4a9eff',cat:'Admin'},
-  {nom:'📋 RDV Mission Locale',date:'2026-04-07',heure:'13:30',color:'#4a9eff',cat:'Admin'},
   // ── GENESIS / IDOLS-GROW ────────────────────
-  {nom:'🌸 Mio — Teasing Sakura (1er teaser)',date:'2026-03-19',heure:'18:30',color:'#ff6b9d',cat:'ECHOES'},
-  {nom:'🌸 Mio — REVEAL OFFICIEL',date:'2026-03-27',heure:'18:30',color:'#ff6b9d',cat:'ECHOES'},
+  {nom:'🌸 Mio — Teasing Sakura (1er teaser)',date:'2026-04-09',heure:'18:30',color:'#ff6b9d',cat:'ECHOES'},
+  {nom:'🌸 Mio — REVEAL OFFICIEL',date:'2026-04-17',heure:'18:30',color:'#ff6b9d',cat:'ECHOES'},
   {nom:'🌸 Mio — Fin fenêtre Sakura',date:'2026-04-03',heure:'00:00',color:'#ff6b9d',cat:'ECHOES'},
   {nom:'🎬 PSYCHO Fan MV — Sortie',date:'2026-04-30',heure:'18:00',color:'#f72585',cat:'PSYCHO'},
-  {nom:'🌙 Mikao — Premier live Empire Lofi',date:'2026-03-28',heure:'20:00',color:'#7b2d8b',cat:'Stream'},
+  {nom:'🌙 Mikao — Premier live Empire Lofi',date:'2026-04-18',heure:'20:00',color:'#7b2d8b',cat:'Stream'},
   {nom:'⚡ ARG Soyeon & Kafka — Indices',date:'2026-04-01',heure:'00:00',color:'#4a9eff',cat:'ARG'},
   {nom:'🖤 Collection Stickers Punk Spring',date:'2026-04-01',heure:'00:00',color:'#3a9a6a',cat:'Stickers'},
   {nom:'📰 UNFORGIVEN Magazine n°1',date:'2026-05-01',heure:'00:00',color:'#f72585',cat:'Magazine'},
@@ -3890,16 +3884,45 @@ const IDOLS_EVENTS=[
   {nom:'🎪 Stand convention',date:'2026-09-01',heure:'00:00',color:'#3a9a6a',cat:'Business'},
 ];
 if(localStorage.getItem('events')){localStorage.removeItem('events');}
-let eventsData=JSON.parse(localStorage.getItem('eventsData')||JSON.stringify(IDOLS_EVENTS));
-function saveEvents(){localStorage.setItem('eventsData',JSON.stringify(eventsData));}
+// Charger eventsData = fusion IDOLS_EVENTS + événements perso sauvegardés
+var eventsData = (function() {
+  var todayStr = new Date().toISOString().split('T')[0];
+  // Événements perso ajoutés manuellement (non présents dans IDOLS_EVENTS)
+  var saved = [];
+  try {
+    var raw = localStorage.getItem('eventsData_perso');
+    if(raw) saved = JSON.parse(raw);
+  } catch(e){}
+  // Fusionner : IDOLS_EVENTS (base) + perso, filtrer passés
+  var tous = IDOLS_EVENTS.concat(saved);
+  tous = tous.filter(function(ev){ return ev.date >= todayStr; });
+  // Dédoublonner par nom+date
+  var seen = {};
+  tous = tous.filter(function(ev){
+    var k = ev.date+'|'+ev.nom;
+    if(seen[k]) return false;
+    seen[k] = true;
+    return true;
+  });
+  return tous.sort(function(a,b){ return a.date.localeCompare(b.date); });
+})();
+if(typeof renderMiniCal==='function')renderMiniCal();
+function saveEvents(){
+  // Sauvegarder uniquement les événements perso (pas ceux de IDOLS_EVENTS)
+  var idolsKeys = {};
+  IDOLS_EVENTS.forEach(function(ev){ idolsKeys[ev.date+'|'+ev.nom]=true; });
+  var perso = eventsData.filter(function(ev){ return !idolsKeys[ev.date+'|'+ev.nom]; });
+  try { localStorage.setItem('eventsData_perso', JSON.stringify(perso)); } catch(e){}
+  if(typeof renderMiniCal==='function') renderMiniCal();
+}
 
 function addEvent(){
   const nom=document.getElementById('ev-nom').value.trim();
   const date=document.getElementById('ev-date').value;
   const color=document.getElementById('ev-color').value||'#c77dff';
   if(!nom||!date)return;
-  eventsData.push({nom,date,color,cat:'Perso'});
-  saveEvents();renderEvents();
+  eventsData.push({nom,date,color,cat:'Perso',heure:heure||'00:00'});
+  saveEvents();renderEvents();if(typeof renderMiniCal==='function')renderMiniCal();
   document.getElementById('ev-nom').value='';
   document.getElementById('ev-date').value='';
   document.getElementById('ev-color').value='';
@@ -3972,8 +3995,8 @@ function initDate(){
   });
 
   // Teasing Mio si proche
-  const diffTeasing=Math.round((new Date('2026-03-19')-today)/(1000*60*60*24));
-  const diffReveal=Math.round((new Date('2026-03-27')-today)/(1000*60*60*24));
+  const diffTeasing=Math.round((new Date('2026-04-09')-today)/(1000*60*60*24));
+  const diffReveal=Math.round((new Date('2026-04-17')-today)/(1000*60*60*24));
   if(diffTeasing===0)notifs.push({icon:'🌸',text:'TEASING MIO AUJOURD\'HUI — 1ère éclosion Tokyo',couleur:'#ff6b9d'});
   else if(diffTeasing>0&&diffTeasing<=2)notifs.push({icon:'🌸',text:'Teasing Mio dans '+diffTeasing+' jour'+(diffTeasing>1?'s':''),couleur:'#ff6b9d'});
   if(diffReveal===0)notifs.push({icon:'✨',text:'REVEAL MIO AUJOURD\'HUI — Pleine floraison',couleur:'#c77dff'});
@@ -4003,7 +4026,7 @@ function initDate(){
     }
   }
   if(notifs.filter(n=>n.couleur==='#f72585').length){
-    document.getElementById('post-badge').textContent='📣 '+notifs.length+' rappel(s)';
+    document.getElementById('post-badge').textContent='📣 '+(notifs[0]?(notifs[0].text||notifs[0]):notifs.length+' rappel(s)');
     document.getElementById('post-badge').style.display='inline-block';
   }
   try{if(typeof Notification!=="undefined"&&Notification.permission!=="denied")Notification.requestPermission();}catch(e){}
@@ -4409,7 +4432,7 @@ function renderAll(){
   // Countdowns PSYCHO phases
   const today3=new Date();today3.setHours(0,0,0,0);
   const phases=[
-    {id:'psycho-p1-cd',date:'2026-03-20'},
+    {id:'psycho-p1-cd',date:'2026-04-10'},
     {id:'psycho-p2-cd',date:'2026-04-03'},
     {id:'psycho-deadline-cd',date:'2026-04-30'},
   ];
@@ -4421,8 +4444,8 @@ function renderAll(){
     el.style.color=diff<=0?'#3a9a6a':diff<=3?'#f72585':'';
   });
   const today2=new Date();today2.setHours(0,0,0,0);
-  const diffT=Math.round((new Date('2026-03-19')-today2)/(1000*60*60*24));
-  const diffR=Math.round((new Date('2026-03-27')-today2)/(1000*60*60*24));
+  const diffT=Math.round((new Date('2026-04-09')-today2)/(1000*60*60*24));
+  const diffR=Math.round((new Date('2026-04-17')-today2)/(1000*60*60*24));
   const mioT=document.getElementById('mio-teasing-cd');
   const mioR=document.getElementById('mio-reveal-cd');
   if(mioT)mioT.textContent=diffT>0?diffT:(diffT===0?'Aujourd\'hui!':'✓');
@@ -4786,7 +4809,7 @@ function genererTimeBlocking(){
         taches.push({text:t.text,duree:DUREES[cat]||35,couleur:cat==='urgent'?'#f72585':cat==='psycho'?'#ffaa44':'#c77dff',cat,hasPipeline:!!PIPELINES[t.text]});
     });
   });
-  TACHES_OBLIGATOIRES.forEach(t=>taches.push({text:t.text,duree:30,couleur:'#3a9a6a',hasPipeline:false}));
+  // TACHES_OBLIGATOIRES retirées du time-blocking (elles ont leur propre section)
 
   // Remplir les créneaux
   const blocs=[];
@@ -5127,15 +5150,17 @@ function renderCalJour(){
   var blocs=[];
 
   // ── ROUTINE FIXE ──
+  var nowMinR = isToday ? (new Date().getHours()*60+new Date().getMinutes()) : 0;
   var routine=[
     {h:'07:00',d:30,l:'🚿 Lever',c:'#2a1a4a',type:'routine'},
     {h:'07:30',d:150,l:'🎨 Art 2h30',c:'#c77dff',type:'routine'},
     {h:'10:00',d:60,l:'🧹 Ménage',c:'#2a1a4a',type:'routine'},
     {h:'11:00',d:120,l:'🍳 Déjeuner',c:'#2a1a4a',type:'routine'},
     {h:'13:00',d:20,l:'😴 Sieste',c:'#7b2d8b',type:'routine'},
-    {h:'13:30',d:30,l:'🇯🇵 Japonais',c:'#3a9a6a',type:'routine'},
-    {h:'22:30',d:30,l:'📓 Bilan + Skincare',c:'#c77dff',type:'routine'},
   ];
+  // Japonais seulement si avant 14h (ou si vue autre jour)
+  if(!isToday || nowMinR < 14*60) routine.push({h:'13:30',d:30,l:'🇯🇵 Japonais',c:'#3a9a6a',type:'routine'});
+  routine.push({h:'22:30',d:30,l:'📓 Bilan + Skincare',c:'#c77dff',type:'routine'});
   var js=dateC.getDay();
   if(js===3)routine.push({h:'18:30',d:30,l:'📸 Post Wanda Mode',c:'#ff6b9d',type:'post'});
   if(js===4)routine.push({h:'18:30',d:30,l:'📅 Post Agence',c:'#c77dff',type:'post'});
@@ -5301,7 +5326,7 @@ function showCalDay(d){
 // EN CE MOMENT
 // ══════════════════════════════
 const PROJETS_ACTIFS_CONFIG=[
-  {id:'mio',label:'🌸 Mio — Sakura Protocol',couleur:'#ff6b9d',deadline:'2026-03-27',statut:'URGENT'},
+  {id:'mio',label:'🌸 Mio — Sakura Protocol',couleur:'#ff6b9d',deadline:'2026-04-17',statut:'URGENT'},
   {id:'psycho',label:'🎬 PSYCHO Fan MV',couleur:'#f72585',deadline:'2026-04-30',statut:'EN COURS'},
   {id:'london',label:'📚 Another London',couleur:'#4a9eff',deadline:null,statut:'ACTIF'},
 ];
@@ -5488,11 +5513,11 @@ function renderLmhsList(){
 
 // ── DONNÉES RÉUNIONS
 var REUNIONS_SUGGEREES = [
-  {id:'r1', titre:'Direction artistique Wanda', desc:'Esthétique feed, templates Canva, bio Instagram', date:'2026-03-19', couleur:'#ff6b9d', duree:60, taches:['Palette feed Wanda','Templates Mercredi Mode','Bio Instagram'], urgence:true},
-  {id:'r2', titre:'Bilan Phase 1 PSYCHO', desc:'Valider tenues Zepeto avant tournage Phase 2', date:'2026-03-20', couleur:'#f72585', duree:90, taches:['Cohérence tenues Wanda/Bianca/Hinari','Maps Zepeto validées','Planning tournage confirmé'], urgence:true},
+  {id:'r1', titre:'Direction artistique Wanda', desc:'Esthétique feed, templates Canva, bio Instagram', date:'2026-04-09', couleur:'#ff6b9d', duree:60, taches:['Palette feed Wanda','Templates Mercredi Mode','Bio Instagram'], urgence:true},
+  {id:'r2', titre:'Bilan Phase 1 PSYCHO', desc:'Valider tenues Zepeto avant tournage Phase 2', date:'2026-04-10', couleur:'#f72585', duree:90, taches:['Cohérence tenues Wanda/Bianca/Hinari','Maps Zepeto validées','Planning tournage confirmé'], urgence:true},
   {id:'r3', titre:'Concept Mio post-floraison', desc:'Quels personnages GENESIS cosplayer, rythme de post', date:'2026-04-04', couleur:'#ff6b9d', duree:60, taches:['5 personnages GENESIS à cosplayer','Rythme de publication','Thèmes récurrents du compte'], urgence:false},
-  {id:'r4', titre:'Éditorial agence Avril', desc:'Préparer les posts agence en avance', date:'2026-03-28', couleur:'#c77dff', duree:45, taches:['Post #003 teaser Mio','Post #004 fiche Team A','Promo PSYCHO Phase 4'], urgence:false},
-  {id:'r5', titre:'Studio Vlog — Rebranding IDOLS-GROW', desc:'Préparer, tourner et monter le vlog de rebranding', date:'2026-03-25', couleur:'#ffaa44', duree:180, taches:['Script + plan de tournage','Tournage','Montage Clipchamp','Publication'], urgence:false}
+  {id:'r4', titre:'Éditorial agence Avril', desc:'Préparer les posts agence en avance', date:'2026-04-18', couleur:'#c77dff', duree:45, taches:['Post #003 teaser Mio','Post #004 fiche Team A','Promo PSYCHO Phase 4'], urgence:false},
+  {id:'r5', titre:'Studio Vlog — Rebranding IDOLS-GROW', desc:'Préparer, tourner et monter le vlog de rebranding', date:'2026-04-15', couleur:'#ffaa44', duree:180, taches:['Script + plan de tournage','Tournage','Montage Clipchamp','Publication'], urgence:false}
 ];
 
 function getReunionsCustom() {
@@ -6297,7 +6322,7 @@ function clearCRs() {
 // LOGIQUE WE MAMAN/PAPA + TO-DO SEMAINE
 // ══════════════════════════════════════════
 
-var WE_MAMAN_START = new Date('2026-03-20');
+var WE_MAMAN_START = new Date('2026-04-10');
 
 function getProchainWeekend() {
   var today = new Date(); today.setHours(0,0,0,0);
@@ -6515,6 +6540,27 @@ function getShortcuts(){
   return SC_DEFAULTS;
 }
 
+function renderMiniCal(){
+  var el=document.getElementById('studio-mini-cal');
+  if(!el)return;
+  var today=new Date().toISOString().split('T')[0];
+  var prochains=eventsData
+    .filter(function(ev){return ev.date>=today;})
+    .sort(function(a,b){return a.date.localeCompare(b.date);})
+    .slice(0,6);
+  if(!prochains.length){el.innerHTML='<div style="font-size:12px;color:#5a4a6a;padding:8px 0">Aucun événement à venir.</div>';return;}
+  el.innerHTML=prochains.map(function(ev){
+    var d=new Date(ev.date);
+    var label=d.toLocaleDateString('fr-FR',{day:'numeric',month:'short'});
+    var col=ev.color||'#c77dff';
+    return '<div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid #1a1428">'
+      +'<div style="font-size:10px;font-weight:700;color:'+col+';min-width:42px">'+label+'</div>'
+      +'<div style="width:4px;height:4px;border-radius:50%;background:'+col+';flex-shrink:0"></div>'
+      +'<div style="font-size:12px;color:#f0e6ff;flex:1">'+ev.nom+'</div>'
+      +'</div>';
+  }).join('');
+}
+
 function renderShortcuts(){
   var grid=document.getElementById('shortcuts-grid');
   if(!grid)return;
@@ -6702,6 +6748,95 @@ window.addEventListener('DOMContentLoaded',function(){
   setTimeout(function(){genererJourneeAuto();},500);
   setTimeout(function(){renderYoutubeHelper();},200);
 });
+
+function activerRattrapage() {
+  var force = localStorage.getItem('mode_rattrapage_force') === '1';
+  if(force) {
+    localStorage.removeItem('mode_rattrapage_force');
+    showToast('Mode rattrapage désactivé');
+    var btn = document.getElementById('btn-rattrapage');
+    if(btn) { btn.style.borderColor='#f7258540'; btn.textContent='🔴 Rattrapage'; }
+  } else {
+    localStorage.setItem('mode_rattrapage_force','1');
+    showToast('Mode rattrapage activé 🖤');
+    var btn = document.getElementById('btn-rattrapage');
+    if(btn) { btn.style.borderColor='#f72585'; btn.textContent='✓ Rattrapage ON'; }
+  }
+  genererJourneeAuto();
+}
+
+// ══════════════════════════════
+// GOOGLE CALENDAR via Anthropic API + Gmail MCP
+// ══════════════════════════════
+async function checkGoogleCalendar() {
+  var el = document.getElementById('gcal-result');
+  if(el) el.innerHTML = '<span style="color:#4285F4">🔍 Lecture de l\'agenda...</span>';
+  try {
+    var resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 800,
+        mcp_servers: [{type:'url', url:'https://gcal.mcp.claude.com/mcp', name:'gcal'}],
+        system: 'Tu accèdes à Google Calendar pour lister les 7 prochains événements à partir d\'aujourd\'hui. Pour chaque événement : date, heure, titre. Format compact, français. Si RDV Mission Locale ou alternance → marque-les 🎓. Si famille → 🏠.',
+        messages: [{role:'user', content:'Liste mes prochains événements agenda pour les 14 prochains jours.'}]
+      })
+    });
+    var data = await resp.json();
+    var text = (data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('');
+    if(!text && data.error) text = '⚠️ ' + (data.error.message||'Erreur API');
+    if(el) el.innerHTML = '<div style="background:#0a1020;border-radius:8px;padding:10px;margin-top:4px;font-size:12px;color:#c0a8d8;line-height:1.8;white-space:pre-wrap">' + (text||'Aucun événement trouvé.') + '</div>';
+  } catch(e) {
+    if(el) el.innerHTML = '<span style="color:#f72585">⚠️ ' + e.message + '</span>';
+  }
+}
+
+async function checkGmailAlternance() {
+  var el = document.getElementById('gmail-result');
+  if(el) el.innerHTML = '<span style="color:#EA4335">🔍 Recherche emails candidatures...</span>';
+  try {
+    var resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 800,
+        mcp_servers: [{type:'url', url:'https://gmail.mcp.claude.com/mcp', name:'gmail'}],
+        system: 'Tu cherches dans Gmail les emails liés à l\'alternance, stage, candidature, Arinfo, designer graphique, réponse entreprise. Liste les 5 derniers : expéditeur, sujet, date, résumé 1 ligne. Français, compact.',
+        messages: [{role:'user', content:'Cherche mes emails alternance et candidatures récents.'}]
+      })
+    });
+    var data = await resp.json();
+    var text = (data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('');
+    if(el) el.innerHTML = '<div style="background:#0a1020;border-radius:8px;padding:10px;margin-top:4px;font-size:12px;color:#c0a8d8;line-height:1.8;white-space:pre-wrap">' + (text||'Aucun email trouvé.') + '</div>';
+  } catch(e) {
+    if(el) el.innerHTML = '<span style="color:#f72585">⚠️ ' + e.message + '</span>';
+  }
+}
+
+async function checkGmailTravail() {
+  var el = document.getElementById('gmail-result');
+  if(el) el.innerHTML = '<span style="color:#3a9a6a">🔍 Recherche emails travail...</span>';
+  try {
+    var resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 800,
+        mcp_servers: [{type:'url', url:'https://gmail.mcp.claude.com/mcp', name:'gmail'}],
+        system: 'Tu cherches dans Gmail les emails liés à l\'emploi, intérim, RAS, mission, offre, poste. Liste les 5 derniers : expéditeur, sujet, date, résumé 1 ligne. Français, compact.',
+        messages: [{role:'user', content:'Cherche mes emails emploi et intérim récents.'}]
+      })
+    });
+    var data = await resp.json();
+    var text = (data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('');
+    if(el) el.innerHTML = '<div style="background:#0a1a10;border-radius:8px;padding:10px;margin-top:4px;font-size:12px;color:#c0a8d8;line-height:1.8;white-space:pre-wrap">' + (text||'Aucun email trouvé.') + '</div>';
+  } catch(e) {
+    if(el) el.innerHTML = '<span style="color:#f72585">⚠️ ' + e.message + '</span>';
+  }
+}
 </script>
 
   <!-- OMEGA -->
