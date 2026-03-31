@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="theme-color" content="#0a0a0f">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>GENESIS STUDIO — v50</title>
+<title>GENESIS STUDIO — v51</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#0a0a0f;color:#f0e6ff;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;padding-bottom:80px;-webkit-tap-highlight-color:transparent;font-size:15px}
+body{background:#0a0a0f;color:#f0e6ff;font-family:'Segoe UI',sans-serif;padding-bottom:80px;-webkit-tap-highlight-color:transparent;font-size:15px}
 .header{background:linear-gradient(135deg,#1a0a2e,#0d0d1a);border-bottom:1px solid #2a1a4a;padding:18px 20px 14px;position:sticky;top:0;z-index:10}
 .header-sub{font-size:11px;letter-spacing:3px;color:#c77dff;margin-bottom:3px}
 .header-title{font-size:24px;font-weight:700;background:linear-gradient(90deg,#f72585,#c77dff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
@@ -135,7 +135,7 @@ body{background:#0a0a0f;color:#f0e6ff;font-family: system-ui, -apple-system, Bli
 </div>
 <div class="header">
   <div class="header-sub">GENESIS STUDIO</div>
-  <div class="header-title">Tableau de Bord — v50</div>
+  <div class="header-title">Tableau de Bord — v51</div>
   <div class="badges">
     <span class="badge bd" id="date-badge"></span>
     <span class="badge bp" id="gaming-badge" style="display:none">🎮 Gaming du 13</span>
@@ -160,7 +160,6 @@ body{background:#0a0a0f;color:#f0e6ff;font-family: system-ui, -apple-system, Bli
     <button class="tab inactive" data-tab="bonus" onclick="showTab('bonus')">🎮 Bonus</button>
     <button class="tab inactive" data-tab="apprentissage" onclick="showTab('apprentissage')">📚 Apprendre</button>
     <button class="tab inactive" data-tab="studio" onclick="showTab('studio')">🎛️ Studio</button>
-    <button class="tab inactive" data-tab="alternance" onclick="showTab('alternance')">💼 Travail</button>
   </div>
 
   <!-- AUJOURD'HUI -->
@@ -311,30 +310,23 @@ body{background:#0a0a0f;color:#f0e6ff;font-family: system-ui, -apple-system, Bli
 
       <!-- Réunions -->
       <div id="plt-reunions-content" style="display:none">
-
-        <!-- NOUVELLE RÉUNION -->
-        <div style="margin-bottom:14px">
-          <input id="reunion-titre" placeholder="Nom de la réunion" style="width:100%;background:#12101a;border:1px solid #2a1a4a;border-radius:8px;padding:9px 12px;color:#f0e6ff;font-size:13px;outline:none;margin-bottom:8px">
-          <input id="reunion-projet" placeholder="Projet concerné (ex: PSYCHO, Mio...)" style="width:100%;background:#12101a;border:1px solid #2a1a4a;border-radius:8px;padding:9px 12px;color:#f0e6ff;font-size:13px;outline:none;margin-bottom:8px">
-          <input id="reunion-objectif" placeholder="Objectif de la réunion" style="width:100%;background:#12101a;border:1px solid #2a1a4a;border-radius:8px;padding:9px 12px;color:#f0e6ff;font-size:13px;outline:none;margin-bottom:8px">
+        <div style="margin-bottom:12px">
+          <input id="reunion-titre" placeholder="Nom de la réunion" style="width:100%;background:#12101a;border:1px solid #2a1a4a;border-radius:8px;padding:8px 10px;color:#f0e6ff;font-size:13px;outline:none;margin-bottom:6px">
+          <input id="reunion-projet" placeholder="Projet (ex: PSYCHO, Mio...)" style="width:100%;background:#12101a;border:1px solid #2a1a4a;border-radius:8px;padding:8px 10px;color:#f0e6ff;font-size:13px;outline:none;margin-bottom:6px">
+          <input id="reunion-objectif" placeholder="Objectif" style="width:100%;background:#12101a;border:1px solid #2a1a4a;border-radius:8px;padding:8px 10px;color:#f0e6ff;font-size:13px;outline:none;margin-bottom:8px">
           <button onclick="demarrerReunion()" style="width:100%;padding:10px;background:linear-gradient(135deg,#7b2d8b,#c77dff);border:none;border-radius:8px;color:#fff;font-size:13px;font-weight:700;cursor:pointer">🤝 Démarrer avec OMEGA</button>
         </div>
-
-        <!-- SESSION EN COURS -->
-        <div id="reunion-session" style="display:none;border:1px solid #c77dff30;border-radius:12px;padding:12px;margin-bottom:14px;background:#0f0c1a">
-          <div style="font-size:11px;color:#c77dff;font-weight:700;margin-bottom:8px" id="reunion-session-titre">Session en cours</div>
-          <div id="reunion-chat" style="max-height:300px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;margin-bottom:10px"></div>
-          <div style="display:flex;gap:8px">
-            <input id="reunion-msg" placeholder="Ta réponse..." onkeydown="if(event.key==='Enter')reunionRepondre()" style="flex:1;background:#12101a;border:1px solid #2a1a4a;border-radius:8px;padding:8px 10px;color:#f0e6ff;font-size:13px;outline:none">
-            <button onclick="reunionRepondre()" style="padding:8px 14px;background:#c77dff;border:none;border-radius:8px;color:#fff;font-size:13px;cursor:pointer">↑</button>
+        <div id="reunion-session" style="display:none;border:1px solid #c77dff30;border-radius:12px;padding:12px;margin-bottom:12px;background:#0f0c1a">
+          <div style="font-size:11px;color:#c77dff;font-weight:700;margin-bottom:8px" id="reunion-session-titre">Session</div>
+          <div id="reunion-chat" style="max-height:250px;overflow-y:auto;display:flex;flex-direction:column;gap:6px;margin-bottom:10px"></div>
+          <div style="display:flex;gap:6px">
+            <input id="reunion-msg" placeholder="Ta réponse..." onkeydown="if(event.key==='Enter')reunionRepondre()" style="flex:1;background:#12101a;border:1px solid #2a1a4a;border-radius:8px;padding:7px 10px;color:#f0e6ff;font-size:12px;outline:none">
+            <button onclick="reunionRepondre()" style="padding:7px 12px;background:#c77dff;border:none;border-radius:8px;color:#fff;font-size:12px;cursor:pointer">↑</button>
           </div>
-          <button onclick="terminerReunion()" style="width:100%;margin-top:8px;padding:9px;background:none;border:1px solid #f72585;border-radius:8px;color:#f72585;font-size:12px;cursor:pointer">📋 Terminer et générer le CR</button>
+          <button onclick="terminerReunion()" style="width:100%;margin-top:8px;padding:8px;background:none;border:1px solid #f72585;border-radius:8px;color:#f72585;font-size:12px;cursor:pointer">📋 Terminer → Générer CR</button>
         </div>
-
-        <!-- COMPTES-RENDUS -->
-        <div style="font-size:9px;color:#5a4a6a;letter-spacing:3px;font-weight:700;margin-bottom:8px">📋 COMPTES-RENDUS</div>
+        <div style="font-size:9px;color:#5a4a6a;letter-spacing:2px;font-weight:700;margin-bottom:8px">COMPTES-RENDUS</div>
         <div id="reunion-cr-list"></div>
-
       </div>
 
         <!-- Onglets réunions -->
@@ -1909,101 +1901,27 @@ body{background:#0a0a0f;color:#f0e6ff;font-family: system-ui, -apple-system, Bli
   </div>
 
   <div id="tab-studio" style="display:none">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
-      <div>
-        <div style="font-size:16px;font-weight:700;color:#c77dff">🎛️ Mes Raccourcis</div>
-        <div style="font-size:11px;color:#5a4a6a;margin-top:2px">Appuie sur + pour ajouter</div>
-      </div>
-      <div style="font-size:18px;font-weight:700;color:#c77dff;font-family:monospace" id="studio-clock">--:--</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+      <div style="font-size:15px;font-weight:700;color:#c77dff">🎛️ Mes Raccourcis</div>
+      <div style="font-size:16px;font-weight:700;color:#c77dff;font-family:monospace" id="studio-clock">--:--</div>
     </div>
-
-    <div id="shortcuts-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px"></div>
-
-    <!-- Bouton ajouter -->
-    <div onclick="shortcutAdd()" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;border:2px dashed #2a1a4a;border-radius:16px;cursor:pointer;color:#5a4a6a;font-size:13px;transition:all .2s" onmouseover="this.style.borderColor='#c77dff';this.style.color='#c77dff'" onmouseout="this.style.borderColor='#2a1a4a';this.style.color='#5a4a6a'">
-      <span style="font-size:20px">＋</span> Ajouter un raccourci
+    <div id="shortcuts-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px"></div>
+    <div onclick="document.getElementById('shortcut-modal').style.display='flex'" style="display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border:2px dashed #2a1a4a;border-radius:14px;cursor:pointer;color:#5a4a6a;font-size:13px">
+      ＋ Ajouter un raccourci
     </div>
-
-    <!-- Modal ajout -->
     <div id="shortcut-modal" style="display:none;position:fixed;inset:0;background:#00000080;z-index:9990;align-items:center;justify-content:center">
-      <div style="background:#0d0b14;border:1px solid #c77dff40;border-radius:16px;padding:20px;width:290px;margin:auto">
-        <div style="font-size:14px;font-weight:700;color:#c77dff;margin-bottom:14px">Nouveau raccourci</div>
-        <input id="sc-emoji" placeholder="Icône (emoji ex: 🎨)" style="width:100%;background:#12101a;border:1px solid #2a1a4a;border-radius:8px;padding:9px;color:#f0e6ff;font-size:16px;outline:none;margin-bottom:8px;text-align:center">
-        <input id="sc-name" placeholder="Nom (ex: Canva)" style="width:100%;background:#12101a;border:1px solid #2a1a4a;border-radius:8px;padding:9px;color:#f0e6ff;font-size:13px;outline:none;margin-bottom:8px">
-        <input id="sc-url" placeholder="URL (ex: https://canva.com)" style="width:100%;background:#12101a;border:1px solid #2a1a4a;border-radius:8px;padding:9px;color:#f0e6ff;font-size:13px;outline:none;margin-bottom:12px">
+      <div style="background:#0d0b14;border:1px solid #c77dff40;border-radius:16px;padding:20px;width:290px">
+        <div style="font-size:13px;font-weight:700;color:#c77dff;margin-bottom:12px">Nouveau raccourci</div>
+        <input id="sc-emoji" placeholder="Icône emoji (ex: 🎨)" style="width:100%;background:#12101a;border:1px solid #2a1a4a;border-radius:8px;padding:8px;color:#f0e6ff;font-size:15px;outline:none;margin-bottom:8px;text-align:center">
+        <input id="sc-name" placeholder="Nom" style="width:100%;background:#12101a;border:1px solid #2a1a4a;border-radius:8px;padding:8px;color:#f0e6ff;font-size:13px;outline:none;margin-bottom:8px">
+        <input id="sc-url" placeholder="URL (ex: canva.com)" style="width:100%;background:#12101a;border:1px solid #2a1a4a;border-radius:8px;padding:8px;color:#f0e6ff;font-size:13px;outline:none;margin-bottom:12px">
         <div style="display:flex;gap:8px">
           <button onclick="shortcutSave()" style="flex:1;padding:10px;background:linear-gradient(135deg,#7b2d8b,#c77dff);border:none;border-radius:8px;color:#fff;font-size:13px;font-weight:700;cursor:pointer">Ajouter</button>
-          <button onclick="shortcutCancel()" style="flex:1;padding:10px;background:none;border:1px solid #2a1a4a;border-radius:8px;color:#5a4a6a;font-size:13px;cursor:pointer">Annuler</button>
+          <button onclick="document.getElementById('shortcut-modal').style.display='none'" style="flex:1;padding:10px;background:none;border:1px solid #2a1a4a;border-radius:8px;color:#5a4a6a;font-size:13px;cursor:pointer">Annuler</button>
         </div>
       </div>
     </div>
-
   </div>
-
-  <!-- ═══ ALTERNANCE / TRAVAIL ═══ -->
-  <div id="tab-alternance" style="display:none">
-    <div class="bt-e" style="background:linear-gradient(135deg,#0a1a2e,#0a2a1e);border:1px solid #34A85340;margin-bottom:12px">💼 RECHERCHE TRAVAIL & ALTERNANCE</div>
-
-    <!-- Objectif hebdo -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
-      <div style="background:#0f0c1a;border:1px solid #34A85340;border-radius:12px;padding:12px">
-        <div style="font-size:9px;color:#5a4a6a;letter-spacing:2px;font-weight:700;margin-bottom:6px">OBJECTIF SEMAINE</div>
-        <div style="display:flex;align-items:center;gap:8px">
-          <div id="alt-count" style="font-size:32px;font-weight:700;color:#34A853">0</div>
-          <div style="font-size:11px;color:#5a4a6a">/ <span id="alt-goal">3</span> candidatures</div>
-        </div>
-        <div style="margin-top:8px;height:6px;background:#1e1530;border-radius:3px"><div id="alt-progress" style="height:100%;background:#34A853;border-radius:3px;width:0%;transition:width .5s"></div></div>
-      </div>
-      <div style="background:#0f0c1a;border:1px solid #34A85340;border-radius:12px;padding:12px">
-        <div style="font-size:9px;color:#5a4a6a;letter-spacing:2px;font-weight:700;margin-bottom:6px">RELANCES EN ATTENTE</div>
-        <div id="alt-relances-count" style="font-size:32px;font-weight:700;color:#ffaa44">0</div>
-        <div style="font-size:11px;color:#5a4a6a">à faire cette semaine</div>
-      </div>
-    </div>
-
-    <!-- Ajouter candidature -->
-    <div style="background:#0f0c1a;border:1px solid #2a1a4a;border-radius:12px;padding:12px;margin-bottom:14px">
-      <div style="font-size:9px;color:#5a4a6a;letter-spacing:2px;font-weight:700;margin-bottom:10px">➕ NOUVELLE CANDIDATURE</div>
-      <input id="alt-entreprise" placeholder="Entreprise" style="width:100%;background:#12101a;border:1px solid #2a1a4a;border-radius:8px;padding:8px 10px;color:#f0e6ff;font-size:12px;outline:none;margin-bottom:6px">
-      <input id="alt-poste" placeholder="Poste visé" style="width:100%;background:#12101a;border:1px solid #2a1a4a;border-radius:8px;padding:8px 10px;color:#f0e6ff;font-size:12px;outline:none;margin-bottom:6px">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px">
-        <select id="alt-type" style="background:#12101a;border:1px solid #2a1a4a;border-radius:8px;padding:8px 10px;color:#f0e6ff;font-size:12px;outline:none">
-          <option value="alternance">Alternance</option>
-          <option value="interim">Intérim</option>
-          <option value="cdd">CDD</option>
-          <option value="job">Job alimentaire</option>
-        </select>
-        <select id="alt-canal" style="background:#12101a;border:1px solid #2a1a4a;border-radius:8px;padding:8px 10px;color:#f0e6ff;font-size:12px;outline:none">
-          <option value="email">Email</option>
-          <option value="terrain">Terrain</option>
-          <option value="linkedin">LinkedIn</option>
-          <option value="site">Site web</option>
-        </select>
-      </div>
-      <button onclick="altAjouter()" style="width:100%;padding:10px;background:linear-gradient(135deg,#1a4a2e,#34A853);border:none;border-radius:8px;color:#fff;font-size:13px;font-weight:700;cursor:pointer">✓ Enregistrer</button>
-    </div>
-
-    <!-- Relances -->
-    <div style="font-size:9px;color:#ffaa44;letter-spacing:2px;font-weight:700;margin-bottom:8px">⏰ RELANCES À FAIRE</div>
-    <div id="alt-relances-list" style="margin-bottom:14px"></div>
-
-    <!-- Liste candidatures -->
-    <div style="font-size:9px;color:#5a4a6a;letter-spacing:2px;font-weight:700;margin-bottom:8px">📋 TOUTES LES CANDIDATURES</div>
-    <div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap">
-      <button onclick="altFiltrer('tout')" id="alt-f-tout" style="padding:4px 12px;border-radius:20px;border:1px solid #34A85340;background:#34A85320;color:#34A853;font-size:11px;cursor:pointer">Tout</button>
-      <button onclick="altFiltrer('attente')" id="alt-f-attente" style="padding:4px 12px;border-radius:20px;border:1px solid #ffaa4440;background:transparent;color:#5a4a6a;font-size:11px;cursor:pointer">En attente</button>
-      <button onclick="altFiltrer('relance')" id="alt-f-relance" style="padding:4px 12px;border-radius:20px;border:1px solid #ffaa4440;background:transparent;color:#5a4a6a;font-size:11px;cursor:pointer">À relancer</button>
-      <button onclick="altFiltrer('positif')" id="alt-f-positif" style="padding:4px 12px;border-radius:20px;border:1px solid #4a9eff40;background:transparent;color:#5a4a6a;font-size:11px;cursor:pointer">Positif</button>
-      <button onclick="altFiltrer('negatif')" id="alt-f-negatif" style="padding:4px 12px;border-radius:20px;border:1px solid #f7258540;background:transparent;color:#5a4a6a;font-size:11px;cursor:pointer">Refus</button>
-    </div>
-    <div id="alt-liste"></div>
-
-    <!-- Intérims Sablé -->
-    <div style="font-size:9px;color:#c77dff;letter-spacing:2px;font-weight:700;margin:16px 0 8px">🏢 INTÉRIMS SABLÉ-SUR-SARTHE</div>
-    <div id="alt-interims"></div>
-
-  </div>
-
   </div>
 
 
@@ -2271,39 +2189,6 @@ body{background:#0a0a0f;color:#f0e6ff;font-family: system-ui, -apple-system, Bli
     <!-- CONFIG -->
     <div id="jat-config-content" style="display:none">
       <div class="sec">📍 MES SORTIES DE LA SEMAINE</div>
-    <div style="margin:12px 0;padding:12px;background:#0f0c1a;border:1px solid #34A85340;border-radius:10px">
-      <div style="font-size:11px;color:#34A853;font-weight:700;margin-bottom:6px">📋 GOOGLE TASKS + GOOGLE HOME</div>
-      <div style="font-size:11px;color:#5a4a6a;margin-bottom:10px">Copie toutes tes tâches du jour — colle dans Google Tasks ou Google Keep. Google Home les lira le matin.</div>
-      <div style="display:flex;gap:8px">
-        <button onclick="copierTachesGoogleTasks()" style="flex:1;padding:9px;background:#34A853;border:none;border-radius:8px;color:#fff;font-size:12px;font-weight:700;cursor:pointer">📋 Copier mes tâches</button>
-        <button onclick="syncTasksToGoogle()" style="padding:9px 12px;background:none;border:1px solid #34A85340;border-radius:8px;color:#34A853;font-size:12px;cursor:pointer">↻ Sync</button>
-      </div>
-    </div>
-
-    <div style="margin:12px 0;padding:12px;background:#0f0c1a;border:1px solid #4285F440;border-radius:10px">
-      <div style="font-size:11px;color:#4285F4;font-weight:700;margin-bottom:6px">📅 GOOGLE CALENDAR</div>
-      <div style="font-size:11px;color:#5a4a6a;margin-bottom:10px">Tes evenements dashboard apparaissent dans Google Calendar. Google Home peut te lire ton agenda le matin.</div>
-      <div style="display:flex;gap:8px">
-        <button onclick="connectGoogleCalendar()" style="flex:1;padding:9px;background:#4285F4;border:none;border-radius:8px;color:#fff;font-size:12px;font-weight:700;cursor:pointer">🔗 Connecter Calendar</button>
-        <button onclick="syncCalendarEvents()" style="padding:9px 12px;background:none;border:1px solid #4285F440;border-radius:8px;color:#4285F4;font-size:12px;cursor:pointer">↻ Sync</button>
-      </div>
-    </div>
-
-    <div style="margin:12px 0;padding:12px;background:#0f0c1a;border:1px solid #FFD04040;border-radius:10px">
-      <div style="font-size:11px;color:#FFD040;font-weight:700;margin-bottom:6px">📝 GOOGLE DRIVE / KEEP</div>
-      <div style="font-size:11px;color:#5a4a6a;margin-bottom:10px">Sauvegarde tes notes OMEGA et idees directement dans Google Drive.</div>
-      <button onclick="connectGoogleKeep('Test note GENESIS', 'Note test')" style="width:100%;padding:9px;background:#FFD040;border:none;border-radius:8px;color:#000;font-size:12px;font-weight:700;cursor:pointer">🔗 Connecter Drive</button>
-    </div>
-
-    <div style="margin:12px 0;padding:12px;background:#0f0c1a;border:1px solid #4a9eff40;border-radius:10px">
-      <div style="font-size:11px;color:#4a9eff;font-weight:700;margin-bottom:6px">☁️ SYNC CROSS-DEVICE (JSONBin)</div>
-      <div style="font-size:11px;color:#5a4a6a;margin-bottom:10px">Sauvegarde tes données dans le cloud — retrouve tout sur n'importe quel appareil.</div>
-      <div style="display:flex;gap:8px">
-        <button onclick="jbSauvegarder()" style="flex:1;padding:9px;background:#4a9eff;border:none;border-radius:8px;color:#fff;font-size:12px;font-weight:700;cursor:pointer">☁️ Sauvegarder</button>
-        <button onclick="jbRestorer()" style="flex:1;padding:9px;background:none;border:1px solid #4a9eff40;border-radius:8px;color:#4a9eff;font-size:12px;cursor:pointer">↓ Restaurer</button>
-      </div>
-      <div style="font-size:10px;color:#5a4a6a;margin-top:6px">Auto-save toutes les 5 min ✓</div>
-    </div>
       <div class="card">
         <div class="ch ch-o"><span>CRÉNEAUX BLOQUÉS</span><button class="reset-btn" onclick="addSortie()">+ Ajouter</button></div>
         <div id="sorties-list"></div>
@@ -2324,23 +2209,41 @@ body{background:#0a0a0f;color:#f0e6ff;font-family: system-ui, -apple-system, Bli
 <script>
 // showTab déclaré en premier — appelé par les onclick HTML
 function showTab(tab){
-  ['semaine','bus','journee-auto','events','agence','genesis','yt','entreprises','routine','budget','bonus','apprentissage','maintenant','calendrier','studio','alternance'].forEach(function(t){
+  ['semaine','bus','journee-auto','events','agence','genesis','yt','entreprises','routine','budget','bonus','apprentissage','maintenant','calendrier','studio'].forEach(function(t){
     var el=document.getElementById('tab-'+t);if(el)el.style.display=t===tab?'block':'none';
   });
   document.querySelectorAll('.tabs .tab').forEach(function(btn){
     var t=btn.getAttribute('data-tab');
     btn.className='tab '+(t===tab?'active':'inactive');
   });
-  if(tab==='journee-auto'){showJourneeTab('taches');if(typeof renderSorties==='function'){renderSorties();renderTachesAPlacer();calculerUrgences();}}
-  if(tab==='apprentissage'&&typeof renderRecompenses==='function')renderRecompenses();
+  if(tab==='journee-auto'){
+    showJourneeTab('taches');
+    if(typeof renderSorties==='function'){renderSorties();renderTachesAPlacer();calculerUrgences();}
+  }
+  if(tab==='apprentissage'&&typeof renderRecompenses==='function'){renderRecompenses();}
   if(tab==='agence'){updateTodoProgress();showAgence('overview');}
-  if(tab==='yt')renderYoutubeHelper();
-  if(tab==='studio')renderShortcuts();
-  if(tab==='alternance')renderAlternance();
-  if(tab==='maintenant')renderEnCeMoment();
-  if(tab==='calendrier')renderCalendrier();
+  if(tab==='yt'){renderYoutubeHelper();}
+  if(tab==='studio'){renderShortcuts();}
+  if(tab==='maintenant'){renderEnCeMoment();}
+  if(tab==='calendrier'){renderCalendrier();}
 }
 
+// DATE & BADGES
+const JRS=['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+const MNS=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+
+// ═══════════════════════════════
+// MA JOURNÉE AUTO — GÉNÉRATEUR
+// ═══════════════════════════════
+
+const SORTIES_SEMAINE=[
+  {jour:2,label:'RDV Mission Locale',heure:'13:30',duree:60,couleur:'#4a9eff'},
+  {jour:5,label:'Mission Locale zone',heure:'16:30',duree:60,couleur:'#4a9eff'},
+];
+
+var sortiesCustom=JSON.parse(localStorage.getItem('sorties_custom')||'[]');
+var tachesAPlacer=JSON.parse(localStorage.getItem('taches_a_placer')||'[]');
+var planningGenere=[];
 
 function saveSorties(){localStorage.setItem('sorties_custom',JSON.stringify(sortiesCustom));}
 function saveTachesAPlacer(){localStorage.setItem('taches_a_placer',JSON.stringify(tachesAPlacer));}
@@ -2668,7 +2571,7 @@ function renderXP(){
 }
 
 function showJourneeTab(tab){
-  ['taches','semaine','planning','urgences','deplacement','blocs','config'].forEach(t=>{
+  ['taches','planning','urgences','deplacement','blocs','config'].forEach(t=>{
     const el=document.getElementById('jat-'+t+'-content');if(el)el.style.display=t===tab?'block':'none';
     const bt=document.getElementById('jat-'+t);if(bt)bt.className='coll-tab'+(t===tab?' active':'');
   });
@@ -2721,12 +2624,8 @@ function genererJourneeAuto(){
 
   const taches=[];
 
-  // 1. URGENCES — exclure WE famille et événements perso
-  var motsExclus = ['we papa','we maman','chez papa','chez maman','weekend','week-end','famille','départ','retour'];
+  // 1. URGENCES
   eventsData.forEach(ev=>{
-    var nomLower = (ev.nom||'').toLowerCase();
-    var estFamille = motsExclus.some(function(m){ return nomLower.includes(m); });
-    if(estFamille) return; // Pas dans les tâches
     const d=new Date(ev.date);d.setHours(0,0,0,0);
     const diff=Math.round((d-today)/(1000*60*60*24));
     if(diff>=0&&diff<=3)
@@ -2747,9 +2646,8 @@ function genererJourneeAuto(){
     // Vérifier que la sortie n'est pas annulée dans les corrections
     const annulee=corrections.some(c=>c.texte.toLowerCase().includes(s.label.toLowerCase().split(' ')[0]+'') && c.texte.toLowerCase().includes('annul'));
     if(!annulee)
-      // Sorties = info de déplacement, pas une tâche de travail
-      taches.push({text:'🚌 '+s.label+' — partir à '+toHeure(sm-20),tag:'DÉPLACEMENT',couleur:'#ffaa44',priorite:1,
-        conseil:'Départ recommandé 20 min avant'});
+      taches.push({text:'🚌 Partir à '+toHeure(sm-20)+' → '+s.label,tag:'SORTIE',couleur:'#ffaa44',priorite:1,
+        conseil:'Départ ~20 min avant'});
   });
 
   // 4. MIO
@@ -2792,7 +2690,10 @@ function genererJourneeAuto(){
   if(jour===5)taches.push({text:'📸 Post Wanda Mannequinat — 18h30',tag:'POST',couleur:'#ff6b9d',priorite:2});
   if(jour===4)taches.push({text:'📅 Post agence — Jeudi',tag:'AGENCE',couleur:'#c77dff',priorite:2,conseil:'L\'agence poste le jeudi'});
 
-  // 7. OBLIGATOIRES — section dédiée, pas dans le planning généré
+  // 7. OBLIGATOIRES — seulement si pas bloqué
+  TACHES_OBLIGATOIRES.forEach(t=>{
+    taches.push({text:t.text,tag:'OBLIGATOIRE',couleur:'#3a9a6a',priorite:3});
+  });
 
   // 8. SHAI
   const shaiState=getState('shai');
@@ -2802,25 +2703,6 @@ function genererJourneeAuto(){
       break;
     }
   }
-
-  // 8b. AUTRES MEMBRES — London, Nessa, Kafka, Mikao, Savannah, Desmond, Haru, Hinari, Bianca, Soyeon
-  var autresMembers = ['london','nessa','kafka','mikao','savannah','desmond','haru','hinari','bianca','soyeon'];
-  var autresEmojis = {london:'📚',nessa:'📖',kafka:'🎮',mikao:'🎀',savannah:'💃',desmond:'📷',haru:'🎬',hinari:'📱',bianca:'💎',soyeon:'🛹'};
-  autresMembers.forEach(function(m) {
-    var todos = TODO_MASTER[m] || [];
-    for(var i=0; i<todos.length; i++) {
-      if(!getTodoState(m,i)) {
-        taches.push({text:(autresEmojis[m]||'●')+' '+todos[i].text,tag:m.toUpperCase(),couleur:'#4a9eff',priorite:4,hasPipeline:!!PIPELINES[todos[i].text]});
-        break;
-      }
-    }
-  });
-
-  // 8c. TO-DO IDOLS (custom)
-  var todoIdols = JSON.parse(localStorage.getItem('todo_idols')||'[]');
-  todoIdols.filter(function(t){ return !t.done; }).slice(0,3).forEach(function(t) {
-    taches.push({text:'⭐ '+t.text,tag:'IDOLS',couleur:'#ff6b9d',priorite:3});
-  });
 
   // 9. RÉUNIONS DU JOUR → tâches urgentes
   if(typeof REUNIONS_SUGGEREES !== 'undefined') {
@@ -2909,27 +2791,173 @@ function genererJourneeAuto(){
   if(weInfo && weInfo.isMaman && weInfo.daysUntil <= 2) {
     // Sprint final avant le WE Maman — remonter toutes les urgences
     taches.forEach(function(t){ t.priorite = Math.max(0, (t.priorite||3) - 2); });
+    // Ajouter un rappel en tête
+    taches.unshift({
+      text:'🏠 WE Maman — ' + (weInfo.daysUntil===0?'AUJOURD\'HUI 14h30 !':weInfo.daysUntil===1?'DEMAIN 14h30':'dans '+weInfo.daysUntil+'j · deadline 14h30'),
+      tag:'FAMILLE',
+      couleur:'#ff6b9d',
+      priorite:-1,
+      conseil:'Repos total chez maman — tout boucler avant'
+    });
   }
 
-  // Bannière WE Maman (après rendu planning)
-  var weInfo2 = (typeof getProchainWeekend==='function') ? getProchainWeekend() : null;
-  if(weInfo2 && weInfo2.isMaman && weInfo2.daysUntil <= 2) {
-    var weBanner2 = document.getElementById('we-maman-banner');
-    if(!weBanner2) {
-      weBanner2 = document.createElement('div');
-      weBanner2.id = 'we-maman-banner';
-      weBanner2.style.cssText = 'background:#1a0a2e;border:1px solid #ff6b9d40;border-radius:10px;padding:10px 14px;margin-bottom:10px;font-size:12px;color:#ff6b9d;font-weight:700;';
-      var pb = document.getElementById('planning-blocks-auto');
-      if(pb) pb.insertBefore(weBanner2, pb.firstChild);
-    }
-    weBanner2.textContent = '🏠 WE Maman — ' + (weInfo2.daysUntil===0?'AUJOURD\'HUI 14h30 !':weInfo2.daysUntil===1?'DEMAIN 14h30':'dans '+weInfo2.daysUntil+'j · deadline 14h30');
+  // ── DÉTECTION MODE RATTRAPAGE ──
+  // Compte combien de tâches obligatoires sont faites aujourd'hui
+  var obligatoiresFaites = 0;
+  var obligatoiresTotal = TACHES_OBLIGATOIRES.length;
+  // On ne peut pas détecter si elles sont faites sans un flag jour
+  // On détecte via le texte de correction ou l'heure
+  var now2 = new Date();
+  var heureActuelle = now2.getHours()*60 + now2.getMinutes();
+  var corrText2 = corrections.map(function(c){return c.texte.toLowerCase();}).join(' ');
+  var modeRattrapage = false;
+  var raisonRattrapage = '';
+
+  // Détecter si l'utilisateur signale avoir raté sa journée
+  if(corrText2.includes('raté') || corrText2.includes('rate') || corrText2.includes('rien fait') ||
+     corrText2.includes('toutes mes taches') || corrText2.includes('routine ratee') ||
+     corrText2.includes('pas fait') || corrText2.includes('journee ratee')) {
+    modeRattrapage = true;
+    raisonRattrapage = 'Tu as signalé une journée difficile.';
   }
+  // Détecter si c'est déjà tard (après 19h) et rien n'est coché
+  if(heureActuelle >= 19*60 && selection.length >= 5) {
+    modeRattrapage = true;
+    raisonRattrapage = 'Il est ' + toHeure(heureActuelle) + ' — on adapte le plan à ce qu\'il reste.';
+  }
+
+  if(modeRattrapage) {
+    // Plan de rattrapage — focus sur 1 tâche essentielle + récupération
+    var rattrTaches = selection.slice(0, 3); // Max 3 tâches
+    var rattrHtml = '<div style="background:#1a0a0a;border:1px solid #f7258530;border-radius:12px;padding:14px;margin-bottom:10px">'
+      + '<div style="font-size:12px;color:#f72585;font-weight:700;margin-bottom:4px">&#128680; MODE RATTRAPAGE</div>'
+      + '<div style="font-size:12px;color:#8a7a9a;margin-bottom:10px">' + raisonRattrapage + '</div>'
+      + '<div style="font-size:11px;color:#f0e6ff;font-weight:700;margin-bottom:8px">&#128161; SOLUTIONS :</div>'
+      + '<div style="font-size:12px;color:#c0a8d8;line-height:2">'
+      + '&#8594; <strong style="color:#f0e6ff">1 tâche seulement</strong> — choisis la plus importante ci-dessous<br>'
+      + '&#8594; Si tu as raté la routine : <strong style="color:#f0e6ff">Everything shower + bilan maintenant</strong>, même à 21h<br>'
+      + '&#8594; Japonais raté : <strong style="color:#f0e6ff">5 min de flashcards</strong> avant de dormir — ça compte<br>'
+      + '&#8594; Art raté : <strong style="color:#f0e6ff">1 dessin rapide, 10 min</strong> — le streak vaut mieux que la perfection<br>'
+      + '&#8594; Tâches GENESIS/Agence ratées : <strong style="color:#f0e6ff">reportées à demain</strong>, pas perdues'
+      + '</div></div>'
+      + '<div style="font-size:10px;color:#5a4a6a;margin-bottom:8px;font-weight:700;letter-spacing:2px">&#128197; LA 1 CHOSE À FAIRE CE SOIR</div>';
+
+    if(rattrTaches.length) {
+      var t = rattrTaches[0]; // La plus urgente
+      var safe = t.text.replace(/'/g,'&#39;').replace(/"/g,'&quot;');
+      rattrHtml += '<div style="background:#0d0b14;border:1px solid ' + (t.couleur||'#c77dff') + '40;border-radius:10px;padding:12px 14px;margin-bottom:8px">'
+        + '<div style="font-size:14px;font-weight:700;color:' + (t.couleur||'#c77dff') + ';margin-bottom:4px">' + t.text + '</div>'
+        + '<div style="font-size:11px;color:#5a4a6a">Si tu ne fais qu\'une chose ce soir — c\'est celle-là.</div>'
+        + '<button onclick="addToJour(\'' + safe + '\');this.textContent=\'Ajoutée ✓\';this.style.color=\'#3a9a6a\'" '
+        + 'style="margin-top:8px;padding:7px 14px;background:#1a0a2e;border:1px solid ' + (t.couleur||'#c77dff') + '40;border-radius:8px;color:' + (t.couleur||'#c77dff') + ';font-size:12px;cursor:pointer">+ Ajouter</button>'
+        + '</div>';
+    }
+
+    // Aussi montrer les 2 suivantes en grisé
+    if(rattrTaches.length > 1) {
+      rattrHtml += '<div style="font-size:10px;color:#5a4a6a;margin-bottom:6px;margin-top:4px">Si tu as encore de l\'énergie :</div>';
+      for(var ri=1; ri<rattrTaches.length; ri++) {
+        var rt = rattrTaches[ri];
+        var rsafe = rt.text.replace(/'/g,'&#39;').replace(/"/g,'&quot;');
+        rattrHtml += '<div style="padding:7px 12px;background:#0d0b14;border-radius:8px;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center;opacity:0.7">'
+          + '<div style="font-size:12px;color:#8a7a9a">' + rt.text + '</div>'
+          + '<button onclick="addToJour(\'' + rsafe + '\');showToast(\'Ajoutée ✓\')" style="background:none;border:1px solid #2a1a4a;border-radius:6px;color:#5a4a6a;font-size:10px;padding:2px 6px;cursor:pointer">+</button>'
+          + '</div>';
+      }
+    }
+
+    rattrHtml += '<div style="margin-top:10px;padding:10px 14px;background:#0a1a0a;border-radius:8px;border:1px solid #3a9a6a40">'
+      + '<div style="font-size:11px;color:#3a9a6a;font-weight:700;margin-bottom:4px">&#128149; RAPPEL TDAH</div>'
+      + '<div style="font-size:12px;color:#8a7a9a;line-height:1.7">Une journée ratée n\'annule pas 8 ans de travail.<br>'
+      + 'Demain recommence à zéro. <strong style="color:#f0e6ff">L\'élan vient après l\'action.</strong></div>'
+      + '</div>';
+
+    blocksAuto.innerHTML = rattrHtml;
+    if(actions) actions.style.display = 'block';
+    showJourneeTab('planning');
+    showToast('Mode rattrapage activé ✨');
+    return; // On court-circuite le planning normal
+  }
+
+
+  blocksAuto.innerHTML=
+    `<div style="padding:10px 14px 4px;font-size:10px;color:#8a7a9a;font-weight:700;letter-spacing:2px">
+      ${today.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'}).toUpperCase()}
+    </div>`+
+    blocNote+
+    selection.map((t,i)=>{
+      const safe=t.text.replace(/'/g,'&#39;').replace(/"/g,'&quot;');
+      return`<div style="display:flex;align-items:flex-start;gap:10px;padding:11px 14px;border-bottom:1px solid #1a1428">
+        <div style="font-size:12px;font-weight:700;min-width:22px;text-align:center;color:${t.couleur};margin-top:1px">${i+1}</div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:13px;font-weight:600;color:#f0e6ff;line-height:1.4">${t.text}</div>
+          <div style="display:flex;gap:6px;margin-top:3px;align-items:center;flex-wrap:wrap">
+            <span style="font-size:10px;padding:1px 6px;border-radius:3px;background:${t.couleur}20;color:${t.couleur}">${t.tag}</span>
+            ${t.conseil?`<span style="font-size:10px;color:#5a4a6a">${t.conseil}</span>`:''}
+          </div>
+        </div>
+        <div style="display:flex;gap:4px;flex-shrink:0">
+          ${t.hasPipeline?`<button onclick="showPipeline('${safe}')" style="background:none;border:1px solid #c77dff40;border-radius:6px;color:#c77dff;font-size:11px;padding:4px 7px;cursor:pointer">💡</button>`:''}
+          <button onclick="addToJour('${safe}');this.textContent='✓';this.style.color='#3a9a6a';this.style.borderColor='#3a9a6a40'"
+            style="background:none;border:1px solid #2a1a4a;border-radius:7px;color:#5a4a6a;font-size:12px;padding:4px 9px;cursor:pointer">+</button>
+        </div>
+      </div>`;
+    }).join('')+
+    (selection.length===0?'<div class="empty">Aucune tâche — Agence ID est à jour 🎉</div>':'');
 
   if(actions)actions.style.display='block';
   showJourneeTab('planning');
   showToast('Journée générée ✨');
 }
 
+
+
+
+function construireBlocs(jour){
+  // Seulement les sorties + créneaux bloqués — pas les routines
+  const blocs=[];
+
+  // Sorties du jour
+  const toutes=[...SORTIES_SEMAINE,...sortiesCustom];
+  toutes.filter(s=>s.jour===jour).forEach(s=>{
+    const sm=toMin(s.heure);
+    blocs.push({heure:toHeure(sm-20),duree:20,label:'🚌 Trajet → '+s.label,couleur:'#ffaa44',fixe:true,categorie:'Déplacement'});
+    blocs.push({heure:s.heure,duree:s.duree,label:'📍 '+s.label,couleur:s.couleur||'#4a9eff',fixe:true,categorie:'Sortie'});
+  });
+
+  // Posts réseaux selon le jour
+  if(jour===3)blocs.push({heure:'18:30',duree:30,label:'📸 Post Wanda — Mode',couleur:'#ff6b9d',fixe:true,categorie:'Post'});
+  if(jour===5){
+    blocs.push({heure:'18:30',duree:30,label:'📸 Post Wanda — Mannequinat',couleur:'#ff6b9d',fixe:true,categorie:'Post'});
+    blocs.push({heure:'19:00',duree:20,label:'🖤 Post Shai',couleur:'#f72585',fixe:true,categorie:'Post'});
+  }
+  if(jour===6)blocs.push({heure:'15:00',duree:30,label:'🌙 Post Mikao',couleur:'#7b2d8b',fixe:true,categorie:'Post'});
+
+  blocs.sort((a,b)=>toMin(a.heure)-toMin(b.heure));
+
+  // Créneaux libres — toute la journée hors sorties
+
+  // Plages disponibles : matin 7h30-12h, après-midi 14h-18h, soir 20h-22h
+  const libres=[
+    ...getLibres(7*60+30,12*60),
+    ...getLibres(14*60,18*60),
+    ...getLibres(20*60,22*60)
+  ];
+
+  const restantes=[...tachesAPlacer];
+  libres.forEach(creneau=>{
+    let dispo=creneau.end-creneau.start,cur=creneau.start;
+    while(dispo>10&&restantes.length){
+      const idx=restantes.findIndex(t=>(t.duree||30)<=dispo);
+      if(idx===-1)break;
+      const t=restantes.splice(idx,1)[0];
+      blocs.push({...t,heure:toHeure(cur),fixe:false});
+      cur+=t.duree||30;dispo-=t.duree||30;
+    }
+  });
+
+  return blocs.sort((a,b)=>toMin(a.heure)-toMin(b.heure));
+}
 
 function showJourTab(tab){
   ['taches','journee'].forEach(t=>{
@@ -3119,8 +3147,141 @@ function showAgence(tab){
 // ANALYSEUR D'IDÉES
 // ══════════════════════
 function analyserIdee(){
-  var result=document.getElementById('idee-resultat')||document.getElementById('idee-analyse-result');
-  if(result){result.style.display='block';result.innerHTML='<p style="color:#8a7a9a;font-size:12px;padding:10px">Analyse disponible avec une cle API. Note tes connexions dans le champ texte.</p>';}
+  const input=document.getElementById('idee-input');
+  const cat=document.getElementById('idee-cat')?.value||'agence';
+  const texte=input?.value?.trim();
+  if(!texte){showToast('Écris une idée !');return;}
+
+  const result=document.getElementById('idee-result');
+  const suite=document.getElementById('idee-suite');
+  if(!result)return;
+
+  // Affichage loader
+  result.style.display='block';
+  result.innerHTML=`
+    <div class="card" style="border-color:#c77dff30">
+      <div class="ch ch-p"><span>🤖 ANALYSE EN COURS...</span></div>
+      <div style="padding:16px 14px;text-align:center">
+        <div style="font-size:13px;color:#8a7a9a;margin-bottom:8px">Claude analyse ton idée dans le contexte de GENESIS...</div>
+        <div style="display:flex;gap:6px;justify-content:center">
+          <div style="width:8px;height:8px;border-radius:50%;background:#c77dff;animation:pulse 1s infinite"></div>
+          <div style="width:8px;height:8px;border-radius:50%;background:#c77dff;animation:pulse 1s .2s infinite"></div>
+          <div style="width:8px;height:8px;border-radius:50%;background:#c77dff;animation:pulse 1s .4s infinite"></div>
+        </div>
+      </div>
+    </div>`;
+
+  if(suite) suite.style.display='none';
+
+  // Contexte GENESIS pour Claude
+  const systemPrompt = `Tu es l'assistant créatif de GENESIS STUDIO, un univers transmédiatique développé depuis 8 ans par une créatrice solo (Treize/Tess Mbouka, Sablé-sur-Sarthe).
+
+UNIVERS GENESIS — contexte complet :
+- GENESIS est une fantasy urbaine questionnant le silence collectif et l'image sociale. Devise : "Je ne crée pas pour changer le monde mais pour faire exister celui que j'imagine."
+- Esthétique globale : Noir & Jaune / Street-Luxe
+
+AGENCE IDOLS-GROW (agence de TALENTS fictive, pas musicale) :
+- Team A (Élite) : Wanda (mannequin), Haru (actrice), Hinari (CM/community manager), Bianca (bijoux)
+- Team B (Urban) : London (danseuse), Soyeon (skateuse/ARG), Shaï (styliste/R-STYLE, Congo-Brazzaville 🇨🇬), Desmond (photographe), Savannah (danseuse), Nessa (booktok)
+- Team C (Art/Rebel) : Creaty/Kafka (streameuse gaming/ARG), Mikao (streameuse jirai kei/Empire Lofi), Mio (cosplayeuse intra-univers — cosplaye des personnages de GENESIS)
+
+PROJETS ACTIFS :
+- PSYCHO : Fan MV Red Velvet sur Zepeto (Wanda principale, Bianca, Hinari) — deadline 30 avril
+- Mio : Sakura Protocol — reveal 27 mars, cosplaye des personnages de l'univers GENESIS
+- Another London : Roman prioritaire (Iris, Vieux Londres 2013, Jesse, Les Dévoreurs)
+- F*UNK : BD France uchronique (Angleterre a gagné guerre 100 ans) avec Shaï + London
+
+RÈGLE IMPORTANTE : Ne connecte une idée à un personnage/projet que si c'est VRAIMENT pertinent et actionnable. Pas de connexions génériques ou forcées.
+
+Tu réponds UNIQUEMENT en JSON valide, sans markdown, sans backticks. Format exact :
+{
+  "titre": "Résumé de l'idée en 1 ligne",
+  "connexions": ["connexion pertinente 1", "connexion pertinente 2"],
+  "taches": ["tâche concrète 1", "tâche concrète 2", "tâche concrète 3"],
+  "planning": [{"date": "dans X jours", "action": "action concrète"}],
+  "alerte": "warning si l'idée entre en conflit avec un projet existant (ou vide)"
+}
+Maximum 4 connexions, 5 tâches, 3 entrées planning. Sois précis et actionnable.`;
+
+  const userMsg = `Projet : ${cat}\nIdée : ${texte}\n\nAnalyse cette idée dans le contexte de GENESIS. Génère uniquement ce qui est vraiment pertinent.`;
+
+  fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      model: 'claude-sonnet-4-20250514',
+      max_tokens: 1000,
+      system: systemPrompt,
+      messages: [{role:'user', content: userMsg}]
+    })
+  })
+  .then(r => r.json())
+  .then(data => {
+    let raw = data.content?.[0]?.text || '';
+    // Nettoyer si markdown
+    raw = raw.replace(/```json\n?/g,'').replace(/```\n?/g,'').trim();
+    let parsed;
+    try { parsed = JSON.parse(raw); }
+    catch(e) {
+      // Fallback si JSON cassé
+      parsed = {
+        titre: texte.slice(0,60),
+        connexions: ['Analyse disponible dans le texte brut'],
+        taches: [],
+        planning: [],
+        alerte: ''
+      };
+    }
+
+    const connexions = parsed.connexions || [];
+    const taches = parsed.taches || [];
+    const planning = parsed.planning || [];
+    const alerte = parsed.alerte || '';
+
+    result.innerHTML = `
+      <div class="card" style="border-color:#c77dff30">
+        <div class="ch ch-p"><span>📊 ANALYSE</span>
+          <button class="reset-btn" onclick="sauvegarderIdee('${texte.replace(/'/g,"&#39;")}','${cat}')">💾 Sauver</button>
+        </div>
+        <div style="padding:10px 14px">
+          <div style="font-size:13px;color:#c77dff;font-weight:700;margin-bottom:10px">${parsed.titre||texte.slice(0,60)}</div>
+          ${alerte ? `<div style="background:#1a0a00;border:1px solid #ffaa4440;border-radius:8px;padding:8px 12px;margin-bottom:10px;font-size:12px;color:#ffaa44">⚠️ ${alerte}</div>` : ''}
+          ${connexions.length ? `
+            <div style="font-size:10px;color:#ff6b9d;font-weight:700;letter-spacing:2px;margin-bottom:6px">🔗 CONNEXIONS</div>
+            ${connexions.map(c=>`<div style="font-size:12px;color:#8a7a9a;padding:4px 0;border-bottom:1px solid #1a1428">→ ${c}</div>`).join('')}
+            <div style="margin-bottom:10px"></div>` : ''}
+          ${taches.length ? `
+            <div style="font-size:10px;color:#f72585;font-weight:700;letter-spacing:2px;margin-bottom:6px">📋 TÂCHES (${taches.length})</div>
+            ${taches.map(t=>`<div style="display:flex;gap:8px;padding:5px 0;border-bottom:1px solid #1a1428;align-items:center">
+              <div style="width:6px;height:6px;border-radius:50%;background:#f72585;flex-shrink:0;margin-top:4px"></div>
+              <div style="font-size:12px;color:#f0e6ff;flex:1">${t}</div>
+            </div>`).join('')}
+            <div style="margin-top:8px">
+              <button onclick="ajouterToutesToDo()" style="width:100%;padding:8px;background:#1a0a2e;border:1px solid #f7258540;border-radius:8px;color:#f72585;font-size:12px;font-weight:700;cursor:pointer">+ Tout ajouter au bon projet</button>
+            </div>` : ''}
+          ${planning.length ? `
+            <div style="font-size:10px;color:#ffaa44;font-weight:700;letter-spacing:2px;margin:10px 0 6px">📅 PLANNING</div>
+            ${planning.map(p=>`<div style="font-size:12px;color:#8a7a9a;padding:3px 0">${p.date} — ${p.action}</div>`).join('')}` : ''}
+        </div>
+      </div>`;
+
+    // Stocker pour suite et routing
+    window._lastIdeeAnalysis = {texte, taches, connexions, planning, cat};
+
+    // Afficher zone de suite + scroll
+    if(suite) suite.style.display='block';
+    setTimeout(()=>result.scrollIntoView({behavior:'smooth',block:'start'}), 100);
+  })
+  .catch(err => {
+    result.innerHTML = `
+      <div class="card" style="border-color:#f7258530">
+        <div class="ch ch-pk"><span>❌ ERREUR RÉSEAU</span></div>
+        <div style="padding:10px 14px;font-size:12px;color:#8a7a9a">
+          Impossible de contacter Claude. Vérifie ta connexion.<br>
+          <span style="font-size:11px;color:#5a4a6a">${err.message}</span>
+        </div>
+      </div>`;
+  });
 }
 
 
@@ -3273,47 +3434,79 @@ function showPlanningTab(tab){
 }
 
 function renderReunions(){
-  // Suggestions de réunions (ancien onglet)
-  var elSug=document.getElementById('reunions-suggerees');
-  var elList=document.getElementById('reunions-list');
-  
-  // CRs (nouvel onglet)
-  var list=document.getElementById('reunion-cr-list');
-  if(list){
-    var crs=JSON.parse(localStorage.getItem('reunion_crs')||'[]');
-    if(!crs.length){
-      list.innerHTML='<div style="color:#5a4a6a;font-size:12px;padding:10px 0">Aucun compte-rendu pour l instant.</div>';
-    } else {
-      list.innerHTML=crs.map(function(cr,i){
-        return '<div style="background:#0f0c1a;border:1px solid #2a1a4a;border-radius:10px;padding:12px;margin-bottom:8px">'
-          +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">'
-          +'<div style="font-size:12px;font-weight:700;color:#c77dff">'+cr.titre+'</div>'
-          +'<div style="display:flex;gap:6px"><span style="font-size:10px;color:#5a4a6a">'+cr.date+'</span>'
-          +'<button onclick="supprimerCR('+i+')" style="background:none;border:none;color:#5a4a6a;cursor:pointer;font-size:12px">✕</button></div></div>'
-          +'<div style="font-size:11px;color:#8a7a9a;margin-bottom:6px">📁 '+cr.projet+'</div>'
-          +'<div style="font-size:12px;color:#f0e6ff;white-space:pre-wrap;line-height:1.6">'+cr.contenu+'</div>'
-          +'</div>';
-      }).join('');
-    }
-  }
+  const el=document.getElementById('reunions-suggerees');
+  if(!el)return;
+  const today=new Date();today.setHours(0,0,0,0);
 
-  // Suggestions dans l ancien onglet
-  if(elSug || elList) {
-    var target = elSug || elList;
-    var today=new Date();today.setHours(0,0,0,0);
-    var reunions=JSON.parse(localStorage.getItem('reunions_custom_v2')||'[]');
-    if(!reunions.length){target.innerHTML='<div style="color:#5a4a6a;font-size:12px">Aucune réunion planifiée.</div>';return;}
-    target.innerHTML=reunions.map(function(r,i){
-      var d=new Date(r.date);
-      var diff=Math.round((d-today)/(1000*60*60*24));
-      return '<div style="background:#0f0c1a;border:1px solid #2a1a4a;border-radius:10px;padding:10px;margin-bottom:8px">'
-        +'<div style="font-size:12px;font-weight:700;color:#c77dff">'+r.titre+'</div>'
-        +'<div style="font-size:10px;color:#5a4a6a;margin-top:4px">'+(diff===0?'Aujourd hui':diff>0?'Dans '+diff+'j':'Il y a '+Math.abs(diff)+'j')+'</div>'
-        +'</div>';
-    }).join('');
-  }
+  // Réunions suggérées automatiquement selon les besoins
+  const reunions=[
+    {
+      titre:'🌸 Réunion concept Mio — stratégie post-floraison',
+      desc:'Définir les personnages GENESIS que Mio va cosplayer + horaires de post réguliers',
+      quand:'Après le 3 avril (fin floraison sakura)',
+      date:'2026-04-04',
+      couleur:'#ff6b9d',
+      taches:['Définir 5 personnages GENESIS pour les cosplays Mio','Fixer le rythme de post (ex: 2x/semaine)','Définir les thèmes récurrents du compte'],
+      pourquoi:'Mio aura besoin d\'un plan de contenu dès que le Sakura Protocol se termine'
+    },
+    {
+      titre:'🎬 Réunion bilan Phase 1 PSYCHO',
+      desc:'Valider les tenues et maps avant de passer au tournage',
+      quand:'Avant le 21 mars (début Phase 2)',
+      date:'2026-03-20',
+      couleur:'#f72585',
+      taches:['Vérifier cohérence tenues Wanda + Bianca + Hinari','Valider les maps Zepeto sélectionnées','Confirmer le planning de tournage'],
+      pourquoi:'Phase 2 commence le 21 mars — validation obligatoire avant'
+    },
+    {
+      titre:'🖤 Réunion direction artistique Wanda',
+      desc:'Définir l\'esthétique du feed Instagram et les templates',
+      quand:'Cette semaine (urgent)',
+      date:'2026-03-19',
+      couleur:'#ff6b9d',
+      taches:['Choisir la palette de couleurs du feed','Créer les templates Canva Mercredi Mode / Vendredi Mannequinat','Rédiger la bio Instagram Wanda'],
+      pourquoi:'Le compte doit être actif avant le 17 mars'
+    },
+    {
+      titre:'🏢 Réunion éditoriale agence — Avril',
+      desc:'Préparer les posts agence d\'avril en avance',
+      quand:'Fin mars',
+      date:'2026-03-28',
+      couleur:'#c77dff',
+      taches:['Préparer Post #003 — Teaser Mio','Préparer Post #004 — Fiche Team A','Planifier la promo PSYCHO Phase 4'],
+      pourquoi:'Anticiper le contenu du compte agence pour avril'
+    },
+  ];
+
+  const aujourd_hui=today.toISOString().split('T')[0];
+  el.innerHTML=reunions.sort((a,b)=>new Date(a.date)-new Date(b.date)).map((r,idx)=>{
+    const d=new Date(r.date);d.setHours(0,0,0,0);
+    const diff=Math.round((d-today)/(1000*60*60*24));
+    const done=localStorage.getItem('reunion_done_'+idx)==='1';
+    const label=diff<0?'Passé':diff===0?'Aujourd\'hui':diff===1?'Demain':'Dans '+diff+' j';
+    return`<div class="card" style="border-color:${done?'#3a9a6a40':r.couleur+'30'};margin-bottom:8px;opacity:${done?0.5:1}">
+      <div style="padding:12px 14px">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">
+          <div style="font-size:13px;font-weight:700;color:${done?'#5a4a6a':r.couleur};flex:1">${r.titre}</div>
+          <button onclick="toggleReunionDone(${idx})" style="background:none;border:1px solid ${done?'#3a9a6a':'#2a1a4a'};border-radius:6px;color:${done?'#3a9a6a':'#5a4a6a'};font-size:10px;padding:2px 7px;cursor:pointer;flex-shrink:0;margin-left:8px">${done?'✓ Faite':'Marquer faite'}</button>
+        </div>
+        <div style="font-size:12px;color:#8a7a9a;margin-bottom:6px">${r.desc}</div>
+        <div style="font-size:11px;margin-bottom:8px">
+          <span style="color:${diff<=3&&diff>=0?'#f72585':r.couleur}">📅 ${r.quand} · ${label}</span>
+          <span style="color:#5a4a6a;margin-left:8px">— ${r.pourquoi}</span>
+        </div>
+        <div style="font-size:10px;color:#5a4a6a;font-weight:700;letter-spacing:1px;margin-bottom:4px">ORDRE DU JOUR</div>
+        ${r.taches.map(t=>`<div style="display:flex;gap:8px;padding:4px 0;border-bottom:1px solid #1a1428;align-items:center">
+          <span style="font-size:11px;color:#8a7a9a;flex:1">→ ${t}</span>
+          <button onclick="addToJour('${t.replace(/'/g,"&#39;")}');showToast('Ajoutée ✓')" style="background:none;border:1px solid #2a1a4a;border-radius:4px;color:#5a4a6a;font-size:9px;padding:1px 5px;cursor:pointer">+ Aujourd\'hui</button>
+        </div>`).join('')}
+      </div>
+    </div>`;
+  }).join('');
+
+  // Réunions custom
+  renderReunionsCustom();
 }
-
 
 function toggleReunionDone(idx){
   const done=localStorage.getItem('reunion_done_'+idx)==='1';
@@ -3753,7 +3946,7 @@ function renderYearView(){
 
 function initDate(){
   const d=new Date(),j=d.getDate(),s=d.getDay();
-  var _JRS=['dim','lun','mar','mer','jeu','ven','sam'];var _MNS=['jan','fev','mar','avr','mai','jun','jul','aou','sep','oct','nov','dec'];document.getElementById('date-badge').textContent=_JRS[s]+' '+j+' '+_MNS[d.getMonth()]+' '+d.getFullYear();
+  document.getElementById('date-badge').textContent=JRS[s]+' '+j+' '+MNS[d.getMonth()]+' '+d.getFullYear();
   if(j===13){document.getElementById('gaming-badge').style.display='inline-block';document.getElementById('sleep-t').textContent='00H00';document.getElementById('sg').style.display='block';}
   if(s===0){document.getElementById('shower-badge').textContent='🚿 Everything shower ce soir';document.getElementById('shower-badge').style.display='inline-block';}
   if(s===3){document.getElementById('shower-badge').textContent='💧 Skincare ce soir';document.getElementById('shower-badge').style.display='inline-block';}
@@ -4808,18 +5001,6 @@ function toggleProjet(id){
   if(arrow)arrow.textContent=open?'›':'⌄';
 }
 
-function showTab(tab){
-  ['jour','semaine','bus','journee-auto','events','echoes','genesis','yt','entreprises','agence','routine','budget','bonus','apprentissage'].forEach(function(t){
-    var el=document.getElementById('tab-'+t);if(el)el.style.display=t===tab?'block':'none';
-  });
-  document.querySelectorAll('.tabs .tab').forEach(function(btn){
-    var t=btn.getAttribute('data-tab');
-    btn.className='tab '+(t===tab?'active':'inactive');
-  });
-  if(tab==='journee-auto'&&typeof renderSorties==='function'){renderSorties();renderTachesAPlacer();calculerUrgences();}
-  if(tab==='apprentissage'&&typeof renderRecompenses==='function'){renderRecompenses();}
-  if(tab==='agence')renderTodoIdols();
-}
 
 function showBiz(tab){
   ['stickers','treso','shopify','fournis','sanrio'].forEach(t=>{
@@ -5115,12 +5296,6 @@ function showCalDay(d){
 
 
 
-function prevMois(){calMois--;if(calMois<0){calMois=11;calAnnee--;}renderCalendrier();}
-function nextMois(){calMois++;if(calMois>11){calMois=0;calAnnee++;}renderCalendrier();}
-function showCalDay(d){
-  const evs=eventsData.filter(ev=>{const dt=new Date(ev.date);return dt.getDate()===d&&dt.getMonth()===calMois&&dt.getFullYear()===calAnnee;});
-  if(evs.length)showToast(evs.map(e=>e.nom).join(' · '));
-}
 
 // ══════════════════════════════
 // EN CE MOMENT
@@ -5257,82 +5432,6 @@ showAgence = function(tab) {
 };
 
 // EN CE MOMENT
-function renderEnCeMoment() {
-  var today = new Date(); today.setHours(0,0,0,0);
-
-  // Projets actifs
-  var el = document.getElementById('projets-actifs-list');
-  if(el) {
-    var projets = [
-      {id:'mio', label:'🌸 Mio — Sakura Protocol', couleur:'#ff6b9d', deadline:'2026-03-27', statut:'URGENT'},
-      {id:'psycho', label:'🎬 PSYCHO Fan MV', couleur:'#f72585', deadline:'2026-04-30', statut:'EN COURS'},
-      {id:'london', label:'📚 Another London', couleur:'#4a9eff', deadline:null, statut:'ACTIF'}
-    ];
-    var html = '';
-    for(var i=0;i<projets.length;i++) {
-      var p = projets[i];
-      var diff = p.deadline ? Math.round((new Date(p.deadline)-today)/(86400000)) : null;
-      var prochaine = '';
-      if(p.id==='mio'){var st=getState('mio');var cas=CASCADES['mio']||[];for(var j=0;j<cas.length;j++){if(!st[j]){prochaine=cas[j].text;break;}}}
-      else if(p.id==='psycho'){var todos=TODO_MASTER['psycho']||[];for(var j=0;j<todos.length;j++){if(!getTodoState('psycho',j)){prochaine=todos[j].text;break;}}}
-      else if(p.id==='london'){var stl=getState('london');var casl=CASCADES['london']||[];for(var j=0;j<casl.length;j++){if(!stl[j]){prochaine=casl[j].text;break;}}}
-      html += '<div class="card" style="border-color:'+p.couleur+'40;margin-bottom:8px"><div style="padding:12px 14px">';
-      html += '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">';
-      html += '<div style="font-size:14px;font-weight:700;color:'+p.couleur+'">'+p.label+'</div>';
-      html += '<span style="font-size:10px;padding:2px 8px;border-radius:4px;background:'+p.couleur+'20;color:'+p.couleur+'">'+p.statut+'</span></div>';
-      if(diff!==null) html += '<div style="font-size:11px;color:'+(diff<=7?'#f72585':'#8a7a9a')+';margin-bottom:6px">Deadline dans '+diff+' jours</div>';
-      if(prochaine) html += '<div style="font-size:12px;color:#f0e6ff;background:#0d0b14;border-radius:6px;padding:7px 10px">&#8594; '+prochaine+'</div>';
-      else html += '<div style="font-size:11px;color:#3a9a6a">&#10003; Toutes les taches faites !</div>';
-      html += '</div></div>';
-    }
-    el.innerHTML = html;
-  }
-
-  // Suivi publications
-  var suivi = document.getElementById('suivi-publications-list');
-  if(suivi) {
-    var comptes = [
-      {id:'wanda',label:'&#127800; Wanda',couleur:'#ff6b9d'},
-      {id:'mio',label:'&#127800; Mio',couleur:'#ff6b9d'},
-      {id:'agence',label:'&#127968; Agence',couleur:'#c77dff'},
-      {id:'shai',label:'&#129462; Shai',couleur:'#f72585'}
-    ];
-    var html2 = '';
-    for(var i=0;i<comptes.length;i++) {
-      var c = comptes[i];
-      var raw = localStorage.getItem('post_log_'+c.id);
-      var post = raw ? JSON.parse(raw) : null;
-      var dateStr = post ? post.date : 'Jamais';
-      var diffJ = post ? Math.round((today-new Date(post.dateRaw))/86400000) : 999;
-      var retard = diffJ >= 7;
-      html2 += '<div style="display:flex;gap:10px;padding:9px 14px;border-bottom:1px solid #1a1428;align-items:center">';
-      html2 += '<div style="flex:1"><div style="font-size:12px;font-weight:600;color:'+c.couleur+'">'+c.label+'</div>';
-      html2 += '<div style="font-size:10px;color:'+(retard?'#f72585':'#5a4a6a')+'">'+dateStr+(retard&&diffJ<999?' — '+diffJ+'j sans post':'')+'</div></div>';
-      html2 += '<button onclick="logPost(\''+c.id+'\',\''+c.label+'\')" style="background:none;border:1px solid '+c.couleur+'40;border-radius:6px;color:'+c.couleur+';font-size:10px;padding:3px 8px;cursor:pointer">+ Post</button></div>';
-    }
-    suivi.innerHTML = html2;
-  }
-
-  // Events 30 jours
-  var evEl = document.getElementById('maintenant-events');
-  if(evEl) {
-    var dans30 = new Date(today.getTime()+30*86400000);
-    var prochains = eventsData.filter(function(ev){var d=new Date(ev.date);d.setHours(0,0,0,0);return d>=today&&d<=dans30;});
-    prochains.sort(function(a,b){return new Date(a.date)-new Date(b.date);});
-    if(!prochains.length){evEl.innerHTML='<div class="empty">Aucun evenement dans 30 jours.</div>';return;}
-    var html3 = '';
-    for(var i=0;i<prochains.length;i++){
-      var ev = prochains[i];
-      var d = new Date(ev.date); d.setHours(0,0,0,0);
-      var dj = Math.round((d-today)/86400000);
-      var col = ev.color||'#c77dff';
-      html3 += '<div style="display:flex;gap:10px;padding:8px 14px;border-bottom:1px solid #1a1428;align-items:center">';
-      html3 += '<div style="font-size:11px;font-weight:700;color:'+col+';min-width:40px">'+(dj===0?'Auj!':dj+'j')+'</div>';
-      html3 += '<div style="flex:1;font-size:12px;color:#f0e6ff">'+ev.nom+'</div></div>';
-    }
-    evEl.innerHTML = html3;
-  }
-}
 
 function logPost(id,label){
   var texte = prompt('Contenu du post :') || 'Post';
@@ -5346,157 +5445,12 @@ var calVue = 'mois';
 var calMois = new Date().getMonth();
 var calAnnee = new Date().getFullYear();
 
-function switchCalVue(vue){
-  calVue=vue;
-  ['mois','semaine','jour'].forEach(function(v){
-    var el=document.getElementById('cal-'+v+'-content');if(el)el.style.display=v===vue?'block':'none';
-    var bt=document.getElementById('cal-vue-'+v);if(bt)bt.className='coll-tab'+(v===vue?' active':'');
-  });
-  renderCalendrier();
-}
 
-function renderCalendrier(){
-  var noms=['Janvier','Fevrier','Mars','Avril','Mai','Juin','Juillet','Aout','Septembre','Octobre','Novembre','Decembre'];
-  var t=document.getElementById('cal-titre');
-  if(t)t.textContent=noms[calMois]+' '+calAnnee;
-  if(calVue==='mois')renderCalMois();
-  else if(calVue==='semaine')renderCalSemaine();
-  else renderCalJour();
-}
 
-function renderCalMois(){
-  var grid=document.getElementById('cal-grid');
-  var evList=document.getElementById('cal-events-list');
-  if(!grid)return;
-  var today=new Date();today.setHours(0,0,0,0);
-  var premier=new Date(calAnnee,calMois,1);
-  var dernier=new Date(calAnnee,calMois+1,0);
-  var start=(premier.getDay()+6)%7;
-  var evsMois=eventsData.filter(function(ev){var d=new Date(ev.date);return d.getMonth()===calMois&&d.getFullYear()===calAnnee;});
-  var todayD=new Date();todayD.setHours(0,0,0,0);
-  var byDay={};evsMois.forEach(function(ev){var d=new Date(ev.date).getDate();if(!byDay[d])byDay[d]=[];byDay[d].push(ev);});
-  var html='';
-  for(var i=0;i<start;i++)html+='<div></div>';
-  for(var d=1;d<=dernier.getDate();d++){
-    var date=new Date(calAnnee,calMois,d);date.setHours(0,0,0,0);
-    var isToday=date.getTime()===today.getTime();
-    var evs=byDay[d]||[];
-    var isPast=date<today;
-    var col=evs.length?evs[0].color||'#c77dff':'transparent';
-    html+='<div onclick="calJourDate('+calAnnee+','+calMois+','+d+')" style="aspect-ratio:1;border-radius:8px;background:'+(isToday?'linear-gradient(135deg,#f72585,#7b2d8b)':evs.length?col+'20':'transparent')+';border:1px solid '+(isToday?'transparent':evs.length?col+'60':'#1e1630')+';display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;opacity:'+(isPast&&!isToday?'0.4':'1')+'">';
-    html+='<div style="font-size:11px;font-weight:'+(isToday?'700':'400')+';color:'+(isToday?'#fff':isPast?'#5a4a6a':'#f0e6ff')+'">'+d+'</div>';
-    if(evs.length)html+='<div style="width:5px;height:5px;border-radius:50%;background:'+col+'"></div>';
-    html+='</div>';
-  }
-  grid.innerHTML=html;
-  if(!evList)return;
-  if(!evsMois.length){evList.innerHTML='<div class="empty">Aucun evenement ce mois.</div>';return;}
-  evsMois.sort(function(a,b){return new Date(a.date)-new Date(b.date);});
-  var evsAffichage=evsMois.filter(function(ev){var d=new Date(ev.date);d.setHours(0,0,0,0);return d>=todayD;});
-  if(!evsAffichage.length){evList.innerHTML='<div class="empty">Aucun événement à venir ce mois.</div>';return;}
-  var eHtml='';
-  evsAffichage.forEach(function(ev){
-    var d=new Date(ev.date);d.setHours(0,0,0,0);
-    var diff=Math.round((d-today)/86400000);
-    var c=ev.color||'#c77dff';
-    eHtml+='<div style="display:flex;gap:10px;padding:8px 14px;border-bottom:1px solid #1a1428;align-items:center"><div style="width:4px;height:4px;border-radius:50%;background:'+c+';flex-shrink:0;margin-top:6px"></div><div style="flex:1"><div style="font-size:12px;color:#f0e6ff">'+ev.nom+'</div><div style="font-size:10px;color:#5a4a6a">'+d.toLocaleDateString('fr-FR',{day:'numeric',month:'long'})+'</div></div><div style="font-size:10px;color:'+(diff<=3&&diff>=0?'#f72585':c)+'">'+(diff<0?'Passe':diff===0?'Auj!':'J-'+diff)+'</div></div>';
-  });
-  evList.innerHTML=eHtml;
-}
 
-function calJourDate(y,m,d){
-  calAnnee=y;calMois=m;
-  window._calDay=new Date(y,m,d);
-  switchCalVue('jour');
-}
 
-function renderCalJour(){
-  var el=document.getElementById('cal-jour-grid');
-  var titre=document.getElementById('cal-jour-titre');
-  if(!el)return;
-  var date=window._calDay||new Date();
-  var today=new Date();today.setHours(0,0,0,0);
-  var dateC=new Date(date);dateC.setHours(0,0,0,0);
-  if(titre)titre.textContent=dateC.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long'});
-  var HD=7,HF=23,TOT=(HF-HD)*60;
-  var blocs=[];
-  var routine=[
-    {h:'07:00',d:30,l:'Lever',c:'#3a2a5a'},
-    {h:'07:30',d:150,l:'Art 2h30',c:'#c77dff'},
-    {h:'10:00',d:60,l:'Menage',c:'#3a2a5a'},
-    {h:'11:00',d:120,l:'Dejeuner',c:'#3a2a5a'},
-    {h:'13:00',d:20,l:'Sieste',c:'#7b2d8b'},
-    {h:'13:30',d:30,l:'Japonais',c:'#3a9a6a'},
-    {h:'20:00',d:120,l:'Projets soir',c:'#c77dff'},
-    {h:'22:30',d:30,l:'Bilan',c:'#3a2a5a'}
-  ];
-  var js=dateC.getDay();
-  if(js===3)routine.push({h:'18:30',d:30,l:'Post Wanda Mode',c:'#ff6b9d'});
-  if(js===4)routine.push({h:'18:30',d:30,l:'Post Agence',c:'#c77dff'});
-  if(js===5)routine.push({h:'18:30',d:30,l:'Post Wanda Mannequinat',c:'#ff6b9d'});
-  routine.forEach(function(r){blocs.push(r);});
-  var dStr=dateC.toISOString().split('T')[0];
-  eventsData.filter(function(ev){return ev.date===dStr;}).forEach(function(ev){blocs.push({h:'12:00',d:60,l:ev.nom,c:ev.color||'#c77dff'});});
-  SORTIES_SEMAINE.concat(sortiesCustom).filter(function(s){return s.jour===js;}).forEach(function(s){
-    var sm=toMin(s.heure);
-    blocs.push({h:toHeure(sm-20),d:20,l:'Trajet '+s.label,c:'#ffaa44'});
-    blocs.push({h:s.heure,d:s.duree,l:s.label,c:s.couleur||'#4a9eff'});
-  });
-  blocs.sort(function(a,b){return toMin(a.h)-toMin(b.h);});
-  var html='<div style="position:relative;min-height:'+TOT*1.5+'px">';
-  for(var h=HD;h<=HF;h++){
-    var top=((h-HD)*60/TOT)*100;
-    html+='<div style="position:absolute;top:'+top+'%;left:0;right:0;display:flex;align-items:center;gap:6px;pointer-events:none"><div style="font-size:10px;color:#3a2a5a;min-width:30px;text-align:right">'+String(h).padStart(2,'0')+'h</div><div style="flex:1;height:1px;background:#1e1630"></div></div>';
-  }
-  blocs.forEach(function(b){
-    var sm=toMin(b.h);
-    var top=((sm-HD*60)/TOT)*100;
-    var height=Math.max((b.d/TOT)*100,1.5);
-    if(top<0||top>100)return;
-    html+='<div style="position:absolute;top:'+top+'%;left:34px;right:4px;height:'+height+'%;background:'+b.c+'25;border-left:3px solid '+b.c+';border-radius:0 6px 6px 0;padding:2px 6px;overflow:hidden;min-height:18px"><div style="font-size:11px;font-weight:600;color:'+b.c+';white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+b.l+'</div></div>';
-  });
-  if(dateC.getTime()===today.getTime()){
-    var now=new Date();var nowM=now.getHours()*60+now.getMinutes();
-    var topN=((nowM-HD*60)/TOT)*100;
-    if(topN>=0&&topN<=100)html+='<div style="position:absolute;top:'+topN+'%;left:0;right:0;z-index:10;display:flex;align-items:center"><div style="width:8px;height:8px;border-radius:50%;background:#f72585"></div><div style="flex:1;height:2px;background:#f72585;opacity:.7"></div></div>';
-  }
-  html+='</div>';
-  el.innerHTML=html;
-}
 
-function renderCalSemaine(){
-  var el=document.getElementById('cal-semaine-grid');if(!el)return;
-  var today=new Date();today.setHours(0,0,0,0);
-  var lundi=new Date(today);lundi.setDate(today.getDate()-((today.getDay()+6)%7));
-  var jours=['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'];
-  var html='<div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px">';
-  for(var i=0;i<7;i++){
-    var d=new Date(lundi);d.setDate(lundi.getDate()+i);
-    var isT=d.getTime()===today.getTime();
-    var evs=eventsData.filter(function(ev){var ed=new Date(ev.date);ed.setHours(0,0,0,0);return ed.getTime()===d.getTime();});
-    var y=d.getFullYear(),m=d.getMonth(),dd=d.getDate();
-    html+='<div onclick="calJourDate('+y+','+m+','+dd+')" style="background:'+(isT?'linear-gradient(135deg,#f72585,#7b2d8b)':'#12101a')+';border:1px solid '+(isT?'transparent':'#1e1630')+';border-radius:10px;padding:10px 6px;text-align:center;cursor:pointer;min-height:80px">';
-    html+='<div style="font-size:10px;color:'+(isT?'#fff':'#8a7a9a')+'">'+jours[i]+'</div>';
-    html+='<div style="font-size:16px;font-weight:700;color:'+(isT?'#fff':'#f0e6ff')+'">'+d.getDate()+'</div>';
-    evs.slice(0,2).forEach(function(ev){html+='<div style="font-size:9px;background:'+(ev.color||'#c77dff')+'30;color:'+(ev.color||'#c77dff')+';border-radius:3px;padding:1px 3px;margin-top:3px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">'+ev.nom.split(' ')[0]+'</div>';});
-    html+='</div>';
-  }
-  html+='</div><div style="text-align:center;font-size:11px;color:#5a4a6a;margin-top:8px">Clique pour voir le planning du jour</div>';
-  el.innerHTML=html;
-}
 
-function prevMois(){
-  if(calVue==='mois'){calMois--;if(calMois<0){calMois=11;calAnnee--;}}
-  else if(calVue==='semaine'){var d=window._calDay||new Date();d.setDate(d.getDate()-7);window._calDay=d;}
-  else{var d=window._calDay||new Date();d.setDate(d.getDate()-1);window._calDay=new Date(d);calAnnee=d.getFullYear();calMois=d.getMonth();}
-  renderCalendrier();
-}
-function nextMois(){
-  if(calVue==='mois'){calMois++;if(calMois>11){calMois=0;calAnnee++;}}
-  else if(calVue==='semaine'){var d=window._calDay||new Date();d.setDate(d.getDate()+7);window._calDay=d;}
-  else{var d=window._calDay||new Date();d.setDate(d.getDate()+1);window._calDay=new Date(d);calAnnee=d.getFullYear();calMois=d.getMonth();}
-  renderCalendrier();
-}
 
 // Murder-Wolf + LMHS
 function renderMurderwList(){
@@ -5831,10 +5785,6 @@ function sauvegarderYtIdee() {
   showToast('Idée sauvegardée ✓');
 }
 
-function setYtTab(tab) {
-  localStorage.setItem('yt_subtab', tab);
-  renderYoutubeHelper();
-}
 function toggleVlogStep(id) {
   var key = 'vlog_step_'+id;
   localStorage.setItem(key, localStorage.getItem(key)==='1'?'0':'1');
@@ -5858,11 +5808,6 @@ function selectVlogType(type) {
 }
 function saveVlogProjet(val) {
   localStorage.setItem('vlog_projet', val);
-}
-function toggleVlogStep(type, stepId) {
-  var key = 'vlog_step_'+type+'_'+stepId;
-  localStorage.setItem(key, localStorage.getItem(key)==='1'?'0':'1');
-  renderYoutubeHelper();
 }
 
 
@@ -6542,106 +6487,6 @@ function ajouterToutesToDo() {
 }
 
 
-// ── STUDIO CLOCK ──
-setInterval(function(){
-  try{
-    var el=document.getElementById('studio-clock');
-    if(el){var n=new Date();el.textContent=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0')+':'+String(n.getSeconds()).padStart(2,'0');}
-  }catch(e){}
-},1000);
-
-// ── OMEGA ──
-var omegaOpen=false, omegaBusy=false, omegaHistory=[];
-
-function toggleOmega(){
-  omegaOpen=!omegaOpen;
-  var panel=document.getElementById('omega-panel');
-  var overlay=document.getElementById('omega-overlay');
-  if(panel)panel.style.right=omegaOpen?'0':'-360px';
-  if(overlay)overlay.style.display=omegaOpen?'block':'none';
-  if(omegaOpen&&omegaHistory.length===0){
-    var we=typeof getProchainWeekend==='function'?getProchainWeekend():null;
-    var msg='Omega en ligne 🖤';
-    if(we&&we.isMaman&&we.daysUntil<=2)msg+=' WE Maman dans '+we.daysUntil+'j — deadline 14h30.';
-    msg+=' De quoi on parle ?';
-    omegaMsg('omega',msg);
-  }
-}
-
-function omegaMsg(role,text){
-  var el=document.getElementById('omega-msgs');if(!el)return;
-  var div=document.createElement('div');
-  div.style.cssText=role==='user'?'align-self:flex-end;background:#1a0a2e;border:1px solid #c77dff30;border-radius:12px 12px 2px 12px;padding:9px 12px;font-size:13px;color:#f0e6ff;max-width:85%':'align-self:flex-start;background:#12101a;border:1px solid #1e1630;border-radius:12px 12px 12px 2px;padding:9px 12px;font-size:13px;color:#f0e6ff;max-width:90%;line-height:1.6';
-  div.textContent=text;
-  el.appendChild(div);
-  el.scrollTop=el.scrollHeight;
-  omegaHistory.push({role:role,text:text});
-}
-
-function omegaSend(preset){
-  if(omegaBusy)return;
-  var input=document.getElementById('omega-in');
-  var text=preset||(input?input.value.trim():'');
-  if(!text)return;
-  if(input)input.value='';
-  omegaMsg('user',text);
-  omegaBusy=true;
-  var dot=document.createElement('div');
-  dot.id='omega-dot';dot.style.cssText='align-self:flex-start;color:#5a4a6a;font-size:12px;padding:8px 12px';
-  dot.textContent='●●●';
-  document.getElementById('omega-msgs').appendChild(dot);
-  setTimeout(function(){
-    var d=document.getElementById('omega-dot');if(d)d.remove();
-    omegaBusy=false;
-    omegaMsg('omega',omegaReply(text));
-  },500);
-}
-
-function omegaReply(t){
-  var lc=t.toLowerCase().replace(/[éèê]/g,'e').replace(/[à]/g,'a').replace(/[ù]/g,'u').replace(/ç/g,'c');
-  var ctx=typeof getDashboardContext==='function'?getDashboardContext():{urgentCount:0,psychoDaysLeft:42,psychoNext:'?',date:'',cascades:{}};
-  var n='\n';
-
-  if(/etat|bilan|quoi faire|resumé|resume|journee/.test(lc)){
-    var p=['Etat '+ctx.date];
-    if(ctx.weekend)p.push('🏠 '+ctx.weekend);
-    p.push('🔥 '+(ctx.urgentCount>0?ctx.urgentCount+' urgences : '+(ctx.urgentNext&&ctx.urgentNext[0]||''):'RAS 🖤'));
-    p.push('🎬 PSYCHO J-'+ctx.psychoDaysLeft+' — '+ctx.psychoNext);
-    if(ctx.cascades&&ctx.cascades.mio)p.push('🌸 Mio : '+ctx.cascades.mio);
-    return p.join(n);
-  }
-  if(/^(salut|bonjour|hey|coucou|hello|bonsoir)/.test(lc.trim())){
-    var g=['Salut 🖤 '+(ctx.urgentCount>0?ctx.urgentCount+' urgences.':'Dashboard propre.'),'Hey. PSYCHO J-'+ctx.psychoDaysLeft+'. 🖤','Presente. '+ctx.date+'. 🖤'];
-    return g[Math.floor(Math.random()*g.length)];
-  }
-  if(/rate|rien fait|pas fait|mauvaise/.test(lc)){
-    var r=['Mode rattrapage 🖤','1 seule chose : '+((ctx.urgentNext&&ctx.urgentNext[0])||'Bilan + skincare.'),'Japonais rate = 5 min flashcards. Art rate = 10 min.','Le streak vaut plus que la perfection. 🖤'];
-    if(ctx.weekend&&ctx.weekend.includes('Maman'))r.push('WE Maman — deadline 14h30 demain !');
-    return r.join(n);
-  }
-  if(/planning|programme|aide|que faire/.test(lc)){
-    var pl=['Planning 📅'];
-    if(ctx.urgentNext)ctx.urgentNext.slice(0,2).forEach(function(t2,i){pl.push((i+1)+'. '+t2);});
-    pl.push('Japonais 30min — Bilan 22h30');
-    return pl.join(n);
-  }
-  if(/maman|week.?end|depart|vendredi/.test(lc)){
-    if(ctx.weekend){var w=[ctx.weekend+' 🏠'];if(ctx.weekend.includes('Maman')){w.push('Deadline 14h30.');w.push(ctx.urgentCount===0?'Tout boucle 🖤':ctx.urgentCount+' tache(s) a finir.');}else w.push('WE Papa — continue.');return w.join(n);}
-  }
-  if(/psycho|fan.?mv|deadline/.test(lc))return 'PSYCHO Fan MV 🎬'+n+'Deadline 30 avril — J-'+ctx.psychoDaysLeft+n+'Prochaine : '+ctx.psychoNext;
-  if(/mio|sakura/.test(lc)){var dm=Math.round((new Date('2026-03-27')-new Date())/86400000);return 'Mio 🌸'+n+(dm>0?'Reveal dans '+dm+'j.':'Mio est en ligne.')+(ctx.cascades&&ctx.cascades.mio?n+ctx.cascades.mio:'');}
-  if(/wanda/.test(lc))return 'Wanda 🎀'+n+'Mannequin Team A. Posts mer+ven 18h30.';
-  if(/shai/.test(lc))return 'Shai 🖤🇨🇬'+n+'Styliste R-STYLE, Congo-Brazzaville.';
-  if(/london|roman|livre/.test(lc))return 'Another London 📚'+n+(ctx.cascades&&ctx.cascades.london||'Roman priorite absolue.');
-  if(/reunion|meeting/.test(lc))return 'Mode Reunion 🤝'+n+'Quel projet ? Quel objectif ?'+n+'Je prends des notes et genere un CR.';
-  if(/post|instagram|caption/.test(lc))return 'Pour quel compte ?'+n+'Wanda, Mio, Agence ou Shai ?';
-  if(/idee/.test(lc))return 'Balance l idee 💡'+n+'Je cherche les connexions avec GENESIS.';
-  if(/japonais/.test(lc))return 'Japonais 🇯🇵'+n+'30 min/jour. 頑張って 🖤';
-  if(/merci|super|nickel/.test(lc))return ['De rien. 🖤','Toujours la. 🖤'][Math.floor(Math.random()*2)];
-  return ['Dis-moi le projet ou le membre. 🖤','Essaie : etat, PSYCHO, Mio, planning, reunion. 🖤'][Math.floor(Math.random()*2)];
-}
-
-
 // ── RACCOURCIS STUDIO ──
 var SC_DEFAULTS = [
   {emoji:'🎨',name:'Canva',url:'https://www.canva.com',color:'#7B68EE'},
@@ -6655,757 +6500,185 @@ var SC_DEFAULTS = [
   {emoji:'📧',name:'Gmail',url:'https://mail.google.com',color:'#EA4335'},
   {emoji:'🗓️',name:'Agenda',url:'https://calendar.google.com',color:'#4285F4'},
   {emoji:'☁️',name:'Drive',url:'https://drive.google.com',color:'#34A853'},
-  {emoji:'📺',name:'YouTube',url:'https://www.youtube.com',color:'#ff4444'},
+  {emoji:'✅',name:'G. Tasks',url:'https://tasks.google.com',color:'#34A853'},
+  {emoji:'📝',name:'G. Keep',url:'https://keep.google.com',color:'#FBBC04'},
   {emoji:'☕',name:'Matinée',url:'https://www.youtube.com/watch?v=CBSlu_VMS9U',color:'#ffaa44'},
   {emoji:'💜',name:'Travail',url:'https://www.youtube.com/watch?v=lTRiuFIWV54',color:'#c77dff'},
   {emoji:'🇯🇵',name:'Japonais',url:'https://www.youtube.com/watch?v=Fxqv9xdLMG4',color:'#3a9a6a'},
   {emoji:'🖤',name:'GENESIS',url:'https://www.youtube.com/watch?v=cyzx45mupcQ',color:'#f72585'},
-  {emoji:'✅',name:'G. Tasks',url:'https://tasks.google.com',color:'#34A853'},
-  {emoji:'📝',name:'G. Keep',url:'https://keep.google.com',color:'#FBBC04'},
 ];
 
 function getShortcuts(){
   var saved=localStorage.getItem('my_shortcuts');
-  if(saved){
-    var data=JSON.parse(saved);
-    if(data.length)return data;
-  }
+  if(saved){var d=JSON.parse(saved);if(d&&d.length)return d;}
   localStorage.setItem('my_shortcuts',JSON.stringify(SC_DEFAULTS));
   return SC_DEFAULTS;
-}
-
-function saveShortcuts(sc){
-  localStorage.setItem('my_shortcuts',JSON.stringify(sc));
 }
 
 function renderShortcuts(){
   var grid=document.getElementById('shortcuts-grid');
   if(!grid)return;
   var sc=getShortcuts();
-  if(!sc.length){grid.innerHTML='<div style="grid-column:span 4;text-align:center;color:#5a4a6a;font-size:13px;padding:20px">Aucun raccourci. Appuie sur + pour ajouter.</div>';return;}
+  if(!sc.length){grid.innerHTML='<div style="grid-column:span 4;text-align:center;color:#5a4a6a;font-size:13px;padding:20px">Aucun raccourci.</div>';return;}
   grid.innerHTML=sc.map(function(s,i){
     var col=s.color||'#c77dff';
     return '<div style="position:relative">'
-      +'<a href="'+s.url+'" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:6px;background:#13101e;border:1px solid '+col+'30;border-radius:16px;padding:16px 6px;text-decoration:none;transition:transform .15s,border-color .15s" onmouseover="this.style.transform=\'scale(1.07)\';this.style.borderColor=\''+col+'\'" onmouseout="this.style.transform=\'\';this.style.borderColor=\''+col+'30\'">'
-      +'<span style="font-size:30px">'+s.emoji+'</span>'
-      +'<span style="font-size:10px;font-weight:700;color:'+col+';text-align:center;line-height:1.2">'+s.name+'</span>'
+      +'<a href="'+s.url+'" target="_blank" style="display:flex;flex-direction:column;align-items:center;gap:6px;background:#13101e;border:1px solid '+col+'30;border-radius:16px;padding:14px 6px;text-decoration:none">'
+      +'<span style="font-size:26px">'+s.emoji+'</span>'
+      +'<span style="font-size:10px;font-weight:700;color:'+col+';text-align:center">'+s.name+'</span>'
       +'</a>'
-      +'<button onclick="shortcutDel('+i+')" style="position:absolute;top:-6px;right:-6px;width:18px;height:18px;border-radius:50%;background:#f72585;border:none;color:#fff;font-size:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1">✕</button>'
+      +'<button onclick="shortcutDel('+i+')" style="position:absolute;top:-5px;right:-5px;width:16px;height:16px;border-radius:50%;background:#f72585;border:none;color:#fff;font-size:9px;cursor:pointer">✕</button>'
       +'</div>';
   }).join('');
 }
 
-function shortcutAdd(){
-  var modal=document.getElementById('shortcut-modal');
-  if(modal){modal.style.display='flex';}
-}
-
-function shortcutCancel(){
-  var modal=document.getElementById('shortcut-modal');
-  if(modal)modal.style.display='none';
-  ['sc-emoji','sc-name','sc-url'].forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});
-}
-
 function shortcutSave(){
-  var emoji=(document.getElementById('sc-emoji')||{}).value||'🔗';
-  var name=(document.getElementById('sc-name')||{}).value||'Lien';
-  var url=(document.getElementById('sc-url')||{}).value||'#';
+  var e=document.getElementById('sc-emoji'),n=document.getElementById('sc-name'),u=document.getElementById('sc-url');
+  var emoji=e?e.value.trim():'🔗', name=n?n.value.trim():'Lien', url=u?u.value.trim():'#';
   if(!url.startsWith('http'))url='https://'+url;
   var sc=getShortcuts();
   sc.push({emoji:emoji,name:name,url:url,color:'#c77dff'});
-  saveShortcuts(sc);
+  localStorage.setItem('my_shortcuts',JSON.stringify(sc));
   renderShortcuts();
-  shortcutCancel();
+  if(e)e.value='';if(n)n.value='';if(u)u.value='';
   if(typeof showToast==='function')showToast('Raccourci ajouté ✓');
+  var m=document.getElementById('shortcut-modal');if(m)m.style.display='none';
 }
 
 function shortcutDel(i){
-  var sc=getShortcuts();
-  sc.splice(i,1);
-  saveShortcuts(sc);
+  var sc=getShortcuts();sc.splice(i,1);
+  localStorage.setItem('my_shortcuts',JSON.stringify(sc));
   renderShortcuts();
 }
 
+// ── OMEGA ──
+var omegaOpen=false,omegaBusy=false,omegaHist=[];
 
+function toggleOmega(){
+  omegaOpen=!omegaOpen;
+  var p=document.getElementById('omega-panel');
+  var o=document.getElementById('omega-overlay');
+  if(p)p.style.right=omegaOpen?'0':'-360px';
+  if(o)o.style.display=omegaOpen?'block':'none';
+  if(omegaOpen&&!omegaHist.length)omegaMsg('omega','Omega en ligne 🖤 De quoi on parle ?');
+}
+
+function omegaMsg(role,text){
+  var el=document.getElementById('omega-msgs');if(!el)return;
+  var div=document.createElement('div');
+  div.style.cssText=role==='user'
+    ?'align-self:flex-end;background:#1a0a2e;border:1px solid #c77dff30;border-radius:12px 12px 2px 12px;padding:9px 12px;font-size:13px;color:#f0e6ff;max-width:85%;margin-bottom:4px'
+    :'align-self:flex-start;background:#12101a;border:1px solid #1e1630;border-radius:12px 12px 12px 2px;padding:9px 12px;font-size:13px;color:#f0e6ff;max-width:90%;line-height:1.6;margin-bottom:4px';
+  div.textContent=text;
+  el.appendChild(div);el.scrollTop=el.scrollHeight;
+  omegaHist.push({role:role,text:text});
+}
+
+function omegaSend(preset){
+  if(omegaBusy)return;
+  var input=document.getElementById('omega-in');
+  var text=preset||(input?input.value.trim():'');
+  if(!text)return;
+  if(input)input.value='';
+  omegaMsg('user',text);
+  omegaBusy=true;
+  var dot=document.createElement('div');
+  dot.id='omega-dot';dot.style.cssText='color:#5a4a6a;font-size:12px;padding:6px 12px';
+  dot.textContent='●●●';
+  var el=document.getElementById('omega-msgs');
+  if(el)el.appendChild(dot);
+  setTimeout(function(){
+    var d=document.getElementById('omega-dot');if(d)d.remove();
+    omegaBusy=false;
+    omegaMsg('omega',omegaReply(text));
+  },400);
+}
+
+function omegaReply(t){
+  var lc=t.toLowerCase().replace(/[éèê]/g,'e').replace(/[à]/g,'a').replace(/ç/g,'c');
+  var ctx=typeof getDashboardContext==='function'?getDashboardContext():{};
+  var nl='\n';
+  if(/etat|quoi faire|journee|bilan/.test(lc)){
+    var p=['Etat '+ctx.date];
+    if(ctx.weekend)p.push('🏠 '+ctx.weekend);
+    p.push('🔥 '+(ctx.urgentCount>0?ctx.urgentCount+' urgences':'RAS 🖤'));
+    p.push('🎬 PSYCHO J-'+ctx.psychoDaysLeft);
+    return p.join(nl);
+  }
+  if(/^(salut|bonjour|hey|coucou)/.test(lc.trim()))return ['Salut 🖤','Hey. 🖤','Presente. 🖤'][Math.floor(Math.random()*3)];
+  if(/rate|rien fait|mauvaise/.test(lc))return 'Mode rattrapage 🖤'+nl+'1 seule chose : '+((ctx.urgentNext&&ctx.urgentNext[0])||'Bilan + skincare.');
+  if(/psycho|deadline/.test(lc))return 'PSYCHO J-'+ctx.psychoDaysLeft+nl+'Prochaine : '+ctx.psychoNext;
+  if(/mio|sakura/.test(lc))return 'Mio 🌸'+nl+(ctx.cascades&&ctx.cascades.mio||'Sakura Protocol');
+  if(/planning|programme/.test(lc))return 'Planning 📅'+nl+(ctx.urgentNext&&ctx.urgentNext.slice(0,2).join(nl)||'Rien d urgent');
+  if(/merci/.test(lc))return 'De rien. 🖤';
+  return ['Dis-moi le projet ou le membre. 🖤','Essaie : etat, PSYCHO, Mio, planning. 🖤'][Math.floor(Math.random()*2)];
+}
 
 // ── RÉUNIONS ──
-var reunionEnCours = null;
-var reunionEchanges = [];
+var reunionEnCours=null,reunionEchanges=[];
 
 
-function demarrerReunion() {
-  var titre = (document.getElementById('reunion-titre') || {}).value || 'Réunion';
-  var projet = (document.getElementById('reunion-projet') || {}).value || '?';
-  var objectif = (document.getElementById('reunion-objectif') || {}).value || '?';
-  
-  reunionEnCours = {titre: titre, projet: projet, objectif: objectif, date: new Date().toLocaleDateString('fr-FR')};
-  reunionEchanges = [];
-  
-  var session = document.getElementById('reunion-session');
-  var sessionTitre = document.getElementById('reunion-session-titre');
-  var chat = document.getElementById('reunion-chat');
-  if(session) session.style.display = 'block';
-  if(sessionTitre) sessionTitre.textContent = titre + ' — ' + projet;
-  if(chat) chat.innerHTML = '';
-  
-  reunionMsg('omega', 'Réunion lancée : ' + titre + '\nObjectif : ' + objectif + '\n\nJe joue l\'interlocuteur. Commençons — peux-tu me présenter le contexte du projet ' + projet + ' ?');
+function demarrerReunion(){
+  var titre=(document.getElementById('reunion-titre')||{}).value||'Réunion';
+  var projet=(document.getElementById('reunion-projet')||{}).value||'?';
+  var objectif=(document.getElementById('reunion-objectif')||{}).value||'?';
+  reunionEnCours={titre:titre,projet:projet,objectif:objectif,date:new Date().toLocaleDateString('fr-FR')};
+  reunionEchanges=[];
+  var s=document.getElementById('reunion-session');if(s)s.style.display='block';
+  var st=document.getElementById('reunion-session-titre');if(st)st.textContent=titre+' — '+projet;
+  var c=document.getElementById('reunion-chat');if(c)c.innerHTML='';
+  reunionMsg2('omega','Réunion : '+titre+nl2+'Objectif : '+objectif+nl2+'Commence — présente le contexte.');
 }
 
-function reunionMsg(role, text) {
-  var chat = document.getElementById('reunion-chat');
-  if(!chat) return;
-  var div = document.createElement('div');
-  div.style.cssText = role === 'user'
-    ? 'align-self:flex-end;background:#1a0a2e;border:1px solid #c77dff30;border-radius:10px 10px 2px 10px;padding:8px 10px;font-size:12px;color:#f0e6ff;max-width:85%'
-    : 'align-self:flex-start;background:#12101a;border:1px solid #1e1630;border-radius:10px 10px 10px 2px;padding:8px 10px;font-size:12px;color:#f0e6ff;max-width:90%;white-space:pre-wrap';
-  div.textContent = text;
-  chat.appendChild(div);
-  chat.scrollTop = chat.scrollHeight;
-  reunionEchanges.push({role: role, text: text});
+var nl2='\n';
+function reunionMsg2(role,text){
+  var chat=document.getElementById('reunion-chat');if(!chat)return;
+  var div=document.createElement('div');
+  div.style.cssText=role==='user'
+    ?'align-self:flex-end;background:#1a0a2e;border-radius:10px;padding:8px 10px;font-size:12px;color:#f0e6ff;max-width:85%;margin-bottom:4px'
+    :'align-self:flex-start;background:#12101a;border-radius:10px;padding:8px 10px;font-size:12px;color:#f0e6ff;max-width:90%;white-space:pre-wrap;margin-bottom:4px';
+  div.textContent=text;
+  chat.appendChild(div);chat.scrollTop=chat.scrollHeight;
+  reunionEchanges.push({role:role,text:text});
 }
 
-function reunionRepondre() {
-  var input = document.getElementById('reunion-msg');
-  var text = input ? input.value.trim() : '';
-  if(!text) return;
-  if(input) input.value = '';
-  reunionMsg('user', text);
-  
-  setTimeout(function() {
-    var questions = [
-      'Quels sont les points bloquants sur ce projet en ce moment ?',
-      'Quelles sont les prochaines étapes concrètes que tu envisages ?',
-      'Y a-t-il des ressources ou de l\'aide dont tu as besoin ?',
-      'Quel est le délai que tu te fixes pour la prochaine étape ?',
-      'Des risques ou imprévus à anticiper ?',
-      'Est-ce qu\'il y a d\'autres points que tu veux aborder avant de conclure ?',
-    ];
-    var idx = Math.floor(reunionEchanges.filter(function(e){return e.role==='omega';}).length);
-    var rep = idx < questions.length ? questions[idx] : 'Autre chose à ajouter avant qu\'on génère le compte-rendu ?';
-    reunionMsg('omega', rep);
-  }, 500);
+function reunionRepondre(){
+  var input=document.getElementById('reunion-msg');
+  var text=input?input.value.trim():'';if(!text)return;
+  if(input)input.value='';
+  reunionMsg2('user',text);
+  var q=['Quels sont les points bloquants ?','Prochaines étapes concrètes ?','Délai pour la prochaine étape ?','Autres points à aborder ?'];
+  var idx=reunionEchanges.filter(function(e){return e.role==='omega';}).length;
+  setTimeout(function(){reunionMsg2('omega',idx<q.length?q[idx]:'Autre chose avant le CR ?');},300);
 }
 
-function terminerReunion() {
-  if(!reunionEnCours) return;
-  
-  var userTextes = reunionEchanges.filter(function(e){return e.role==='user';}).map(function(e){return e.text;});
-  var omegaTextes = reunionEchanges.filter(function(e){return e.role==='omega';}).map(function(e){return e.text;});
-  
-  var contenu = '📋 COMPTE-RENDU\n';
-  contenu += '═══════════════\n';
-  contenu += 'Projet : ' + reunionEnCours.projet + '\n';
-  contenu += 'Objectif : ' + reunionEnCours.objectif + '\n\n';
-  contenu += '🗣️ ÉCHANGES\n';
-  reunionEchanges.forEach(function(e) {
-    if(e.role === 'user') contenu += '→ ' + e.text + '\n';
-  });
-  contenu += '\n✅ PROCHAINES ÉTAPES\nÀ extraire des échanges ci-dessus.';
-  
-  var cr = {
-    titre: reunionEnCours.titre,
-    projet: reunionEnCours.projet,
-    date: reunionEnCours.date,
-    contenu: contenu
-  };
-  
-  var crs = JSON.parse(localStorage.getItem('reunion_crs') || '[]');
-  crs.unshift(cr);
-  localStorage.setItem('reunion_crs', JSON.stringify(crs));
-  
-  var session = document.getElementById('reunion-session');
-  if(session) session.style.display = 'none';
-  reunionEnCours = null;
-  reunionEchanges = [];
-  
+function terminerReunion(){
+  if(!reunionEnCours)return;
+  var contenu='COMPTE-RENDU\n';
+  contenu+='Projet : '+reunionEnCours.projet+'\n';
+  contenu+='Objectif : '+reunionEnCours.objectif+'\n\n';
+  contenu+='ÉCHANGES\n';
+  reunionEchanges.filter(function(e){return e.role==='user';}).forEach(function(e){contenu+='→ '+e.text+'\n';});
+  var cr={titre:reunionEnCours.titre,projet:reunionEnCours.projet,date:reunionEnCours.date,contenu:contenu};
+  var crs=JSON.parse(localStorage.getItem('reunion_crs')||'[]');
+  crs.unshift(cr);localStorage.setItem('reunion_crs',JSON.stringify(crs));
+  var s=document.getElementById('reunion-session');if(s)s.style.display='none';
+  reunionEnCours=null;reunionEchanges=[];
   renderReunions();
-  if(typeof showToast === 'function') showToast('Compte-rendu sauvegardé ✓');
+  if(typeof showToast==='function')showToast('CR sauvegardé ✓');
 }
 
-function supprimerCR(i) {
-  var crs = JSON.parse(localStorage.getItem('reunion_crs') || '[]');
-  crs.splice(i, 1);
-  localStorage.setItem('reunion_crs', JSON.stringify(crs));
+function supprimerCR(i){
+  var crs=JSON.parse(localStorage.getItem('reunion_crs')||'[]');
+  crs.splice(i,1);localStorage.setItem('reunion_crs',JSON.stringify(crs));
   renderReunions();
 }
 
+// Clock
+setInterval(function(){
+  try{var el=document.getElementById('studio-clock');if(el){var n=new Date();el.textContent=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0');}}catch(e){}
+},1000);
 
-// ── GOOGLE TASKS SYNC ──
-var GCLIENT_ID = '332368656018-vdilm2r5q7s3ctoj1usktv4oio4tf9ql.apps.googleusercontent.com';
-var GSCOPES = 'https://www.googleapis.com/auth/tasks';
-var gtasksToken = null;
-var gtasksInited = false;
-
-function initGoogleTasks() {
-  if(gtasksInited) return;
-  var script = document.createElement('script');
-  script.src = 'https://accounts.google.com/gsi/client';
-  script.onload = function() {
-    gtasksInited = true;
-    console.log('Google Identity Services loaded');
-  };
-  document.head.appendChild(script);
-}
-
-function connectGoogleTasks() {
-  if(!gtasksInited) { initGoogleTasks(); setTimeout(connectGoogleTasks, 1000); return; }
-  var client = google.accounts.oauth2.initTokenClient({
-    client_id: GCLIENT_ID,
-    scope: GSCOPES,
-    callback: function(response) {
-      if(response.access_token) {
-        gtasksToken = response.access_token;
-        localStorage.setItem('gtasks_token', gtasksToken);
-        if(typeof showToast === 'function') showToast('Google Tasks connecté ✓');
-        syncTasksToGoogle();
-      }
-    }
-  });
-  client.requestAccessToken();
-}
-
-function syncTasksToGoogle() {
-  if(!gtasksToken) gtasksToken = localStorage.getItem('gtasks_token');
-  if(!gtasksToken) { if(typeof showToast==='function') showToast('Reconnecte Google Tasks dabord'); return; }
-  // Get tasklist first
-  fetch('https://tasks.googleapis.com/tasks/v1/users/@me/lists', {
-    headers: { 'Authorization': 'Bearer ' + gtasksToken }
-  })
-  .then(function(r){ return r.json(); })
-  .then(function(data) {
-    var list = data.items && data.items[0];
-    if(!list) return;
-    var listId = list.id;
-    // Get current tasks from dashboard
-    // Collecter toutes les tâches du dashboard
-  var tachesSync = [];
-  var today2 = new Date(); today2.setHours(0,0,0,0);
-
-  // Tâches urgentes custom
-  var urgentes = JSON.parse(localStorage.getItem('todo_extra_urgent')||'[]');
-  urgentes.filter(function(t){return !t.done;}).forEach(function(t){tachesSync.push({text:t.text||t});});
-
-  // Tâches IDOLS
-  var idols = JSON.parse(localStorage.getItem('todo_idols')||'[]');
-  idols.filter(function(t){return !t.done;}).forEach(function(t){tachesSync.push({text:t.text||t});});
-
-  // Candidatures à relancer
-  var cands = JSON.parse(localStorage.getItem('alt_candidatures')||'[]');
-  cands.forEach(function(c){
-    if(c.statut !== 'attente') return;
-    var dr = new Date(c.dateRelance); dr.setHours(0,0,0,0);
-    var diff = Math.round((dr - today2)/(1000*60*60*24));
-    if(diff <= 2) tachesSync.push({text:'Relance ' + c.entreprise + ' — ' + c.poste});
-  });
-
-  var taches = tachesSync;
-    taches.forEach(function(t) {
-      if(!t.text || t.googleSynced) return;
-      fetch('https://tasks.googleapis.com/tasks/v1/lists/' + listId + '/tasks', {
-        method: 'POST',
-        headers: {
-          'Authorization': 'Bearer ' + gtasksToken,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ title: t.text, notes: 'GENESIS Dashboard' })
-      })
-      .then(function(r){ return r.json(); })
-      .then(function(task) {
-        t.googleTaskId = task.id;
-        t.googleSynced = true;
-      });
-    });
-    localStorage.setItem('taches_urgentes', JSON.stringify(taches));
-    if(typeof showToast === 'function') showToast('Tâches synchronisées avec Google Tasks ✓');
-  })
-  .catch(function(){ if(typeof showToast === 'function') showToast('Erreur sync Google Tasks'); });
-}
-
-function disconnectGoogleTasks() {
-  gtasksToken = null;
-  localStorage.removeItem('gtasks_token');
-  if(typeof showToast === 'function') showToast('Google Tasks déconnecté');
-}
-
-
-// ── GOOGLE CALENDAR + KEEP SYNC ──
-var GCAL_SCOPE = 'https://www.googleapis.com/auth/calendar.events';
-var GKEEP_SCOPE = 'https://www.googleapis.com/auth/keep';
-var GDRIVE_SCOPE = 'https://www.googleapis.com/auth/drive.file';
-var gcalToken = null;
-
-function connectGoogleCalendar() {
-  if(!gtasksInited) { initGoogleTasks(); setTimeout(connectGoogleCalendar, 1000); return; }
-  var client = google.accounts.oauth2.initTokenClient({
-    client_id: GCLIENT_ID,
-    scope: GCAL_SCOPE,
-    callback: function(response) {
-      if(response.access_token) {
-        gcalToken = response.access_token;
-        localStorage.setItem('gcal_token', gcalToken);
-        if(typeof showToast === 'function') showToast('Google Calendar connecte !');
-        syncCalendarEvents();
-      }
-    }
-  });
-  client.requestAccessToken();
-}
-
-function syncCalendarEvents() {
-  if(!gcalToken) gcalToken = localStorage.getItem('gcal_token');
-  if(!gcalToken) { if(typeof showToast==='function') showToast('Connecte Google Calendar dabord'); return; }
-  var events = JSON.parse(localStorage.getItem('events_list') || '[]');
-  if(!events.length) { if(typeof showToast==='function') showToast('Aucun evenement a synchroniser'); return; }
-  var synced = 0;
-  events.forEach(function(ev) {
-    if(ev.gcalSynced || !ev.date) return;
-    var startDate = ev.date;
-    var body = {
-      summary: ev.titre || ev.title || 'Evenement GENESIS',
-      description: 'GENESIS Dashboard - ' + (ev.type || ''),
-      start: { date: startDate },
-      end: { date: startDate }
-    };
-    fetch('https://www.googleapis.com/calendar/v3/calendars/primary/events', {
-      method: 'POST',
-      headers: {
-        'Authorization': 'Bearer ' + gcalToken,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(body)
-    })
-    .then(function(r){ return r.json(); })
-    .then(function(data) {
-      ev.gcalSynced = true;
-      ev.gcalId = data.id;
-      synced++;
-      if(synced === 1) {
-        localStorage.setItem('events_list', JSON.stringify(events));
-        if(typeof showToast==='function') showToast('Evenements synchronises avec Google Calendar !');
-      }
-    })
-    .catch(function(){ if(typeof showToast==='function') showToast('Erreur sync Calendar'); });
-  });
-  if(!synced) if(typeof showToast==='function') showToast('Tous les evenements sont deja synchronises');
-}
-
-function syncNoteToKeep(texte, titre) {
-  if(!gcalToken) { connectGoogleKeep(texte, titre); return; }
-  syncNoteGDrive(texte, titre);
-}
-
-function connectGoogleKeep(texte, titre) {
-  if(!gtasksInited) { initGoogleTasks(); setTimeout(function(){ connectGoogleKeep(texte, titre); }, 1000); return; }
-  var client = google.accounts.oauth2.initTokenClient({
-    client_id: GCLIENT_ID,
-    scope: GDRIVE_SCOPE,
-    callback: function(response) {
-      if(response.access_token) {
-        gcalToken = response.access_token;
-        localStorage.setItem('gcal_token', gcalToken);
-        if(typeof showToast==='function') showToast('Google Drive connecte !');
-        if(texte) syncNoteGDrive(texte, titre);
-      }
-    }
-  });
-  client.requestAccessToken();
-}
-
-function syncNoteGDrive(texte, titre) {
-  var content = (titre || 'Note GENESIS') + '\n\n' + texte + '\n\n-- GENESIS Dashboard ' + new Date().toLocaleDateString('fr-FR');
-  var metadata = { name: (titre || 'Note GENESIS') + ' - ' + new Date().toLocaleDateString('fr-FR'), mimeType: 'text/plain', parents: [] };
-  var formData = new FormData();
-  formData.append('metadata', new Blob([JSON.stringify(metadata)], {type:'application/json'}));
-  formData.append('file', new Blob([content], {type:'text/plain'}));
-  fetch('https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart', {
-    method: 'POST',
-    headers: { 'Authorization': 'Bearer ' + gcalToken },
-    body: formData
-  })
-  .then(function(r){ return r.json(); })
-  .then(function(){ if(typeof showToast==='function') showToast('Note sauvee dans Google Drive !'); })
-  .catch(function(){ if(typeof showToast==='function') showToast('Erreur sauvegarde Drive'); });
-}
-
-
-// ── ALTERNANCE / TRAVAIL ──
-var ALT_INTERIMS = [
-  {nom:'RAS Intérim', adresse:'Rue de la Gare, Sablé', tel:'02 43 62 XX XX', type:'interim'},
-  {nom:'Adecco Sablé', adresse:'Centre-ville Sablé', tel:'02 43 XX XX XX', type:'interim'},
-  {nom:'Manpower La Flèche', adresse:'La Flèche (proche)', tel:'02 43 XX XX XX', type:'interim'},
-  {nom:'Mission Locale Sablé', adresse:'Zone industrielle', tel:'02 43 XX XX XX', type:'mission'},
-  {nom:'Pôle Emploi La Flèche', adresse:'La Flèche', tel:'02 43 XX XX XX', type:'pole'},
-];
-
-var altFiltreActif = 'tout';
-
-function getAltCandidatures() {
-  return JSON.parse(localStorage.getItem('alt_candidatures') || '[]');
-}
-
-function saveAltCandidatures(data) {
-  localStorage.setItem('alt_candidatures', JSON.stringify(data));
-}
-
-function altAjouter() {
-  var entreprise = (document.getElementById('alt-entreprise')||{}).value||'';
-  var poste = (document.getElementById('alt-poste')||{}).value||'';
-  var type = (document.getElementById('alt-type')||{}).value||'alternance';
-  var canal = (document.getElementById('alt-canal')||{}).value||'email';
-  if(!entreprise) { if(typeof showToast==='function') showToast('Saisis le nom de l entreprise'); return; }
-
-  var now = new Date();
-  var relance = new Date(now); relance.setDate(relance.getDate()+7);
-  var candidature = {
-    id: Date.now(),
-    entreprise: entreprise,
-    poste: poste || 'Poste non précisé',
-    type: type,
-    canal: canal,
-    date: now.toISOString().split('T')[0],
-    dateRelance: relance.toISOString().split('T')[0],
-    statut: 'attente',
-    notes: ''
-  };
-
-  var data = getAltCandidatures();
-  data.unshift(candidature);
-  saveAltCandidatures(data);
-
-  ['alt-entreprise','alt-poste'].forEach(function(id){ var el=document.getElementById(id); if(el)el.value=''; });
-  renderAlternance();
-  if(typeof showToast==='function') showToast('Candidature ajoutée ✓');
-}
-
-function altStatut(id, statut) {
-  var data = getAltCandidatures();
-  var c = data.find(function(c){ return c.id===id; });
-  if(c) { c.statut = statut; saveAltCandidatures(data); renderAlternance(); }
-}
-
-function altSupprimer(id) {
-  var data = getAltCandidatures().filter(function(c){ return c.id!==id; });
-  saveAltCandidatures(data);
-  renderAlternance();
-}
-
-function altFiltrer(f) {
-  altFiltreActif = f;
-  ['tout','attente','relance','positif','negatif'].forEach(function(k) {
-    var btn = document.getElementById('alt-f-'+k);
-    if(btn) {
-      btn.style.background = k===f ? '#34A85320' : 'transparent';
-      btn.style.color = k===f ? '#34A853' : '#5a4a6a';
-    }
-  });
-  renderAlternanceListe();
-}
-
-function renderAlternance() {
-  var data = getAltCandidatures();
-  var today = new Date(); today.setHours(0,0,0,0);
-
-  // Objectif semaine (lundi - dimanche)
-  var lundi = new Date(today);
-  lundi.setDate(today.getDate() - (today.getDay()||7) + 1);
-  var dimanche = new Date(lundi); dimanche.setDate(lundi.getDate()+6);
-  var semaine = data.filter(function(c) {
-    var d = new Date(c.date);
-    return d >= lundi && d <= dimanche;
-  }).length;
-
-  var goal = parseInt(localStorage.getItem('alt_goal')||'3');
-  var pct = Math.min(100, Math.round(semaine/goal*100));
-  var elCount = document.getElementById('alt-count');
-  var elGoal = document.getElementById('alt-goal');
-  var elProg = document.getElementById('alt-progress');
-  if(elCount) elCount.textContent = semaine;
-  if(elGoal) elGoal.textContent = goal;
-  if(elProg) { elProg.style.width = pct+'%'; elProg.style.background = pct>=100?'#ffd60a':'#34A853'; }
-
-  // Relances
-  var relances = data.filter(function(c) {
-    if(c.statut !== 'attente') return false;
-    var dr = new Date(c.dateRelance); dr.setHours(0,0,0,0);
-    var diff = Math.round((dr - today)/(1000*60*60*24));
-    return diff <= 2;
-  });
-  var elRC = document.getElementById('alt-relances-count');
-  if(elRC) elRC.textContent = relances.length;
-
-  // Render relances list
-  var elRL = document.getElementById('alt-relances-list');
-  if(elRL) {
-    if(!relances.length) {
-      elRL.innerHTML = '<div style="color:#5a4a6a;font-size:12px;padding:8px 0">Aucune relance urgente ✓</div>';
-    } else {
-      elRL.innerHTML = relances.map(function(c) {
-        var dr = new Date(c.dateRelance); dr.setHours(0,0,0,0);
-        var diff = Math.round((dr - today)/(1000*60*60*24));
-        var urgLabel = diff <= 0 ? '🔥 AUJOURD\'HUI' : diff===1 ? '⚠️ DEMAIN' : 'Dans '+diff+'j';
-        return '<div style="background:#1a1000;border:1px solid #ffaa4440;border-radius:10px;padding:10px 12px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center">'
-          +'<div><div style="font-size:12px;font-weight:700;color:#ffaa44">'+c.entreprise+'</div>'
-          +'<div style="font-size:10px;color:#5a4a6a">'+c.poste+' · '+urgLabel+'</div></div>'
-          +'<button onclick="altStatut('+c.id+',\'relance\')" style="padding:5px 10px;background:#ffaa44;border:none;border-radius:6px;color:#000;font-size:11px;font-weight:700;cursor:pointer">Relancé ✓</button>'
-          +'</div>';
-      }).join('');
-    }
-  }
-
-  // Intérims
-  var elI = document.getElementById('alt-interims');
-  if(elI) {
-    elI.innerHTML = ALT_INTERIMS.map(function(i) {
-      var colors = {interim:'#c77dff', mission:'#34A853', pole:'#4a9eff'};
-      var col = colors[i.type]||'#c77dff';
-      return '<div style="background:#0f0c1a;border:1px solid '+col+'30;border-radius:10px;padding:10px 12px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center">'
-        +'<div><div style="font-size:12px;font-weight:700;color:'+col+'">'+i.nom+'</div>'
-        +'<div style="font-size:10px;color:#5a4a6a;margin-top:2px">'+i.adresse+'</div></div>'
-        +'<a href="tel:'+i.tel+'" style="padding:5px 10px;border:1px solid '+col+'40;border-radius:6px;color:'+col+';font-size:11px;text-decoration:none">📞</a>'
-        +'</div>';
-    }).join('');
-  }
-
-  renderAlternanceListe();
-}
-
-function renderAlternanceListe() {
-  var data = getAltCandidatures();
-  var elL = document.getElementById('alt-liste');
-  if(!elL) return;
-
-  var filtered = altFiltreActif==='tout' ? data : data.filter(function(c){ return c.statut===altFiltreActif; });
-
-  if(!filtered.length) {
-    elL.innerHTML = '<div style="color:#5a4a6a;font-size:12px;padding:10px 0">Aucune candidature' + (altFiltreActif!=='tout'?' dans cette catégorie':' pour l instant') + '.</div>';
-    return;
-  }
-
-  var statutColors = {attente:'#ffaa44', relance:'#4a9eff', positif:'#34A853', negatif:'#f72585'};
-  var statutLabels = {attente:'En attente', relance:'Relancé', positif:'Positif !', negatif:'Refus'};
-  var typeLabels = {alternance:'ALT', interim:'INT', cdd:'CDD', job:'JOB'};
-
-  elL.innerHTML = filtered.map(function(c) {
-    var col = statutColors[c.statut]||'#5a4a6a';
-    return '<div style="background:#0f0c1a;border:1px solid #2a1a4a;border-radius:10px;padding:10px 12px;margin-bottom:8px">'
-      +'<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px">'
-      +'<div><div style="font-size:12px;font-weight:700;color:#f0e6ff">'+c.entreprise+'</div>'
-      +'<div style="font-size:10px;color:#5a4a6a;margin-top:2px">'+c.poste+'</div></div>'
-      +'<div style="display:flex;gap:4px;align-items:center">'
-      +'<span style="font-size:9px;padding:2px 6px;border-radius:10px;background:'+col+'20;color:'+col+';font-weight:700">'+statutLabels[c.statut]+'</span>'
-      +'<span style="font-size:9px;padding:2px 6px;border-radius:10px;background:#2a1a4a;color:#5a4a6a">'+typeLabels[c.type]+'</span>'
-      +'</div></div>'
-      +'<div style="font-size:10px;color:#5a4a6a;margin-bottom:8px">📅 '+c.date+' · '+c.canal+'</div>'
-      +'<div style="display:flex;gap:4px;flex-wrap:wrap">'
-      +(c.statut!=='positif'?'<button onclick="altStatut('+c.id+',\'positif\')" style="padding:3px 8px;background:#34A85320;border:1px solid #34A85340;border-radius:6px;color:#34A853;font-size:10px;cursor:pointer">✓ Positif</button>':'')
-      +(c.statut!=='negatif'?'<button onclick="altStatut('+c.id+',\'negatif\')" style="padding:3px 8px;background:#f7258520;border:1px solid #f7258540;border-radius:6px;color:#f72585;font-size:10px;cursor:pointer">✗ Refus</button>':'')
-      +(c.statut==='attente'?'<button onclick="altStatut('+c.id+',\'relance\')" style="padding:3px 8px;background:#ffaa4420;border:1px solid #ffaa4440;border-radius:6px;color:#ffaa44;font-size:10px;cursor:pointer">↻ Relancé</button>':'')
-      +'<button onclick="altSupprimer('+c.id+')" style="padding:3px 8px;background:none;border:1px solid #2a1a4a;border-radius:6px;color:#5a4a6a;font-size:10px;cursor:pointer">✕</button>'
-      +'</div></div>';
-  }).join('');
-}
-
-
-
-
-var NOTIF_CHECK_INTERVAL = 60 * 1000;
-var NOTIFS = [
-  {id:'lever',heure:'07:00',titre:'🌅 Lever',body:'Bonne journée ! Lance ta routine.'},
-  {id:'art',heure:'07:30',titre:'🎨 Art',body:'2h30 de pratique artistique.'},
-  {id:'menage',heure:'10:00',titre:'🧹 Ménage',body:'30 min de ménage.'},
-  {id:'japonais',heure:'13:30',titre:'🇯🇵 Japonais',body:'30 min de japonais — session Kitsune.'},
-  {id:'bilan',heure:'21:30',titre:'📓 Bilan',body:'Bilan de la journée + skincare.'},
-];
-
-function checkToutesNotifs(){
-  if(typeof Notification==='undefined'||Notification.permission!=='granted')return;
-  var now=new Date();
-  var h=now.getHours(),m=now.getMinutes();
-  var key='notif_done_'+now.toDateString();
-  var done=JSON.parse(localStorage.getItem(key)||'[]');
-  NOTIFS.forEach(function(n){
-    var p=n.heure.split(':').map(Number);
-    if(h===p[0]&&m>=p[1]&&m<p[1]+5&&!done.includes(n.id)){
-      new Notification(n.titre,{body:n.body});
-      done.push(n.id);
-      localStorage.setItem(key,JSON.stringify(done));
-    }
-  });
-}
-
-function demarrerNotifs(){
-  demanderPermissionNotif();
-  demarrerNotifs();
-  setTimeout(checkToutesNotifs,2000);
-  setInterval(checkToutesNotifs,NOTIF_CHECK_INTERVAL);
-}
-
-
-function copierTachesGoogleTasks() {
-  var today = new Date();
-  var jours = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
-  var mois = ['jan','fev','mar','avr','mai','juin','juil','aout','sep','oct','nov','dec'];
-  var dateStr = jours[today.getDay()] + ' ' + today.getDate() + ' ' + mois[today.getMonth()];
-
-  var lignes = ['📋 TÂCHES DU JOUR — ' + dateStr, ''];
-
-  // Urgentes
-  var urgentes = JSON.parse(localStorage.getItem('todo_extra_urgent')||'[]');
-  var urgentes2 = (typeof TODO_MASTER !== 'undefined') ? (TODO_MASTER['urgent']||[]) : [];
-  var hasUrgent = false;
-  urgentes.filter(function(t){return !t.done;}).forEach(function(t){
-    if(!hasUrgent){lignes.push('🚨 URGENT');hasUrgent=true;}
-    lignes.push('☐ ' + (t.text||t));
-  });
-  urgentes2.forEach(function(t,i){
-    if(typeof getTodoState==='function'&&!getTodoState('urgent',i)){
-      if(!hasUrgent){lignes.push('🚨 URGENT');hasUrgent=true;}
-      lignes.push('☐ ' + t.text);
-    }
-  });
-
-  // Projets actifs
-  var projets = {
-    'PSYCHO': TODO_MASTER && TODO_MASTER['psycho'] ? TODO_MASTER['psycho'] : [],
-    'WANDA': TODO_MASTER && TODO_MASTER['wanda-rel'] ? TODO_MASTER['wanda-rel'] : [],
-    'MIO': typeof CASCADES!=='undefined' ? (CASCADES['mio']||[]).map(function(c){return {text:c.text};}) : [],
-  };
-  Object.keys(projets).forEach(function(proj) {
-    var todos = projets[proj];
-    for(var i=0;i<todos.length;i++){
-      if(typeof getTodoState==='function'&&!getTodoState(proj.toLowerCase().replace('-rel',''),i)){
-        lignes.push('');
-        lignes.push('📁 ' + proj);
-        lignes.push('☐ ' + todos[i].text);
-        break;
-      }
-    }
-  });
-
-  // Candidatures à relancer
-  var cands = JSON.parse(localStorage.getItem('alt_candidatures')||'[]');
-  var relances = cands.filter(function(c){
-    if(c.statut!=='attente')return false;
-    var dr=new Date(c.dateRelance);dr.setHours(0,0,0,0);
-    var t2=new Date();t2.setHours(0,0,0,0);
-    return Math.round((dr-t2)/(1000*60*60*24))<=2;
-  });
-  if(relances.length){
-    lignes.push('');
-    lignes.push('💼 RELANCES');
-    relances.forEach(function(c){ lignes.push('☐ Relancer ' + c.entreprise + ' — ' + c.poste); });
-  }
-
-  // Obligatoires
-  lignes.push('');
-  lignes.push('📌 QUOTIDIEN');
-  if(typeof TACHES_OBLIGATOIRES!=='undefined'){
-    TACHES_OBLIGATOIRES.forEach(function(t){ lignes.push('☐ ' + t.text); });
-  }
-
-  var texte = lignes.join('\n');
-
-  // Copier dans le presse-papier
-  if(navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(texte).then(function(){
-      if(typeof showToast==='function') showToast('Tâches copiées — colle dans Google Tasks 🖤');
-    });
-  } else {
-    var ta = document.createElement('textarea');
-    ta.value = texte;
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
-    if(typeof showToast==='function') showToast('Tâches copiées 🖤');
-  }
-}
-
-// ── JSONBIN SYNC ──
-var JSONBIN_KEY = '$2a$10$qVGjWe68iOzxZIfUdoRahO2Lzx2WHfPGjlN4a8zdkMpQU5tz5Ypi.';
-var JSONBIN_URL = 'https://api.jsonbin.io/v3/b';
-var JSONBIN_BIN_ID = localStorage.getItem('jsonbin_bin_id') || null;
-var jbSyncing = false;
-
-function jbGetData() {
-  var data = {};
-  var keys = ['todo_extra_urgent','todo_idols','alt_candidatures','reunion_crs',
-               'my_shortcuts','taches_a_placer','sorties_custom','gen_corrections',
-               'tache_states','cascade_states'];
-  keys.forEach(function(k) {
-    var v = localStorage.getItem(k);
-    if(v) try { data[k] = JSON.parse(v); } catch(e) { data[k] = v; }
-  });
-  return data;
-}
-
-function jbSauvegarder() {
-  if(jbSyncing) return;
-  jbSyncing = true;
-  var data = jbGetData();
-  var opts = {
-    method: JSONBIN_BIN_ID ? 'PUT' : 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Master-Key': JSONBIN_KEY,
-      'X-Bin-Name': 'genesis-studio'
-    },
-    body: JSON.stringify({genesis: data, updated: new Date().toISOString()})
-  };
-  var url = JSONBIN_BIN_ID ? JSONBIN_URL + '/' + JSONBIN_BIN_ID : JSONBIN_URL;
-  fetch(url, opts)
-    .then(function(r){ return r.json(); })
-    .then(function(d) {
-      jbSyncing = false;
-      if(d.metadata && d.metadata.id) {
-        JSONBIN_BIN_ID = d.metadata.id;
-        localStorage.setItem('jsonbin_bin_id', JSONBIN_BIN_ID);
-      }
-      if(typeof showToast==='function') showToast('Sauvegardé dans le cloud ☁️');
-    })
-    .catch(function(e) {
-      jbSyncing = false;
-      if(typeof showToast==='function') showToast('Erreur sauvegarde cloud');
-    });
-}
-
-function jbRestorer() {
-  if(!JSONBIN_BIN_ID) {
-    if(typeof showToast==='function') showToast('Aucune sauvegarde trouvée — sauvegarde d abord');
-    return;
-  }
-  fetch(JSONBIN_URL + '/' + JSONBIN_BIN_ID + '/latest', {
-    headers: {'X-Master-Key': JSONBIN_KEY}
-  })
-  .then(function(r){ return r.json(); })
-  .then(function(d) {
-    var data = d.record && d.record.genesis;
-    if(!data) { if(typeof showToast==='function') showToast('Aucune donnee a restaurer'); return; }
-    Object.keys(data).forEach(function(k) {
-      localStorage.setItem(k, JSON.stringify(data[k]));
-    });
-    if(typeof showToast==='function') showToast('Données restaurées depuis le cloud ✓');
-    setTimeout(function(){ location.reload(); }, 1500);
-  })
-  .catch(function() {
-    if(typeof showToast==='function') showToast('Erreur restauration');
-  });
-}
-
-// Auto-save toutes les 5 minutes
-setInterval(function() {
-  if(JSONBIN_BIN_ID) jbSauvegarder();
-}, 5 * 60 * 1000);
-
-
-const SORTIES_SEMAINE=[
-  {jour:2,label:'RDV Mission Locale',heure:'13:30',duree:60,couleur:'#4a9eff'},
-  {jour:5,label:'Mission Locale zone',heure:'16:30',duree:60,couleur:'#4a9eff'},
-];
-var sortiesCustom=JSON.parse(localStorage.getItem('sorties_custom')||'[]');
-var planningGenere=[];
-const JRS=['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
-const MNS=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
 
 window.addEventListener('DOMContentLoaded',function(){
   initDate();
@@ -7425,41 +6698,36 @@ window.addEventListener('DOMContentLoaded',function(){
   renderTodoSection('urgent','todo-urgent-list');
   injecterReunionsCalendrier();
   demanderPermissionNotif();
-  if(typeof demarrerNotifs==='function')demarrerNotifs();
   setInterval(checkNotifWeMaman, 5*60*1000); // Vérifie toutes les 5 min
   setTimeout(function(){genererJourneeAuto();},500);
   setTimeout(function(){renderYoutubeHelper();},200);
 });
 </script>
-    <!-- ═══ STUDIO — RACCOURCIS ═══ -->
+
   <!-- OMEGA -->
   <div id="omega-fab" onclick="toggleOmega()" style="position:fixed;bottom:24px;right:16px;z-index:9999;width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#1a0a2e,#2a0a4a);border:2px solid #c77dff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 0 20px #c77dff40"><span style="font-size:20px;font-weight:700;color:#c77dff">Ω</span></div>
   <div id="omega-overlay" onclick="toggleOmega()" style="display:none;position:fixed;inset:0;background:#00000060;z-index:9997"></div>
   <div id="omega-panel" style="position:fixed;top:0;right:-360px;width:340px;height:100vh;background:#0d0b14;border-left:1px solid #c77dff30;z-index:9998;display:flex;flex-direction:column;transition:right .3s">
     <div style="padding:16px 14px 12px;border-bottom:1px solid #1e1630;flex-shrink:0">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
         <div style="display:flex;align-items:center;gap:10px">
-          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#7b2d8b,#c77dff);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff">Ω</div>
+          <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#7b2d8b,#c77dff);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff">Ω</div>
           <div><div style="font-size:14px;font-weight:700;color:#c77dff">OMEGA</div><div style="font-size:10px;color:#5a4a6a">Assistante GENESIS STUDIO</div></div>
         </div>
         <button onclick="toggleOmega()" style="background:none;border:none;color:#5a4a6a;font-size:20px;cursor:pointer">✕</button>
       </div>
       <div style="display:flex;gap:4px;flex-wrap:wrap">
-        <button onclick="omegaSend('Etat du dashboard')" style="padding:4px 10px;border-radius:20px;border:1px solid #c77dff40;background:transparent;color:#c77dff;font-size:11px;cursor:pointer">📊 État</button>
-        <button onclick="omegaSend('Je veux preparer une reunion')" style="padding:4px 10px;border-radius:20px;border:1px solid #c77dff40;background:transparent;color:#c77dff;font-size:11px;cursor:pointer">🤝 Réunion</button>
-        <button onclick="omegaSend('J ai une idee')" style="padding:4px 10px;border-radius:20px;border:1px solid #c77dff40;background:transparent;color:#c77dff;font-size:11px;cursor:pointer">💡 Idée</button>
-        <button onclick="omegaSend('Aide moi a rediger un post')" style="padding:4px 10px;border-radius:20px;border:1px solid #c77dff40;background:transparent;color:#c77dff;font-size:11px;cursor:pointer">✍️ Post</button>
+        <button onclick="omegaSend('etat du dashboard')" style="padding:4px 10px;border-radius:20px;border:1px solid #c77dff40;background:transparent;color:#c77dff;font-size:11px;cursor:pointer">📊 État</button>
+        <button onclick="omegaSend('je veux faire une reunion')" style="padding:4px 10px;border-radius:20px;border:1px solid #c77dff40;background:transparent;color:#c77dff;font-size:11px;cursor:pointer">🤝 Réunion</button>
+        <button onclick="omegaSend('planning pour ce soir')" style="padding:4px 10px;border-radius:20px;border:1px solid #c77dff40;background:transparent;color:#c77dff;font-size:11px;cursor:pointer">📅 Planning</button>
       </div>
     </div>
-    <div id="omega-msgs" style="flex:1;overflow-y:auto;padding:12px 14px;display:flex;flex-direction:column;gap:10px"></div>
+    <div id="omega-msgs" style="flex:1;overflow-y:auto;padding:12px 14px;display:flex;flex-direction:column"></div>
     <div style="padding:10px 14px;border-top:1px solid #1e1630;flex-shrink:0;display:flex;gap:8px">
-      <textarea id="omega-in" placeholder="Dis-moi tout..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();omegaSend()}" style="flex:1;background:#12101a;border:1px solid #2a1a4a;border-radius:10px;padding:9px 12px;color:#f0e6ff;font-size:13px;outline:none;resize:none;min-height:40px;max-height:100px"></textarea>
+      <textarea id="omega-in" placeholder="Dis-moi tout..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();omegaSend();}" style="flex:1;background:#12101a;border:1px solid #2a1a4a;border-radius:10px;padding:9px 12px;color:#f0e6ff;font-size:13px;outline:none;resize:none;min-height:40px;max-height:100px"></textarea>
       <button onclick="omegaSend()" style="width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#7b2d8b,#c77dff);border:none;color:#fff;font-size:18px;cursor:pointer;flex-shrink:0;align-self:flex-end">↑</button>
     </div>
   </div>
-
-
-
 
 </body>
 </html>
